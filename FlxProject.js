@@ -37,7 +37,7 @@ ApplicationMain.create = function() {
 	urls.push("assets/btnvolverajugar.png");
 	types.push("IMAGE");
 	urls.push("assets/cancion.ogg");
-	types.push("SOUND");
+	types.push("MUSIC");
 	urls.push("assets/corazon.png");
 	types.push("IMAGE");
 	urls.push("assets/derrota.ogg");
@@ -49,7 +49,7 @@ ApplicationMain.create = function() {
 	urls.push("assets/fondo.png");
 	types.push("IMAGE");
 	urls.push("assets/inicio.ogg");
-	types.push("SOUND");
+	types.push("MUSIC");
 	urls.push("assets/itai.png");
 	types.push("IMAGE");
 	urls.push("assets/lilita.png");
@@ -122,7 +122,7 @@ ApplicationMain.init = function() {
 	}
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "385", company : "HaxeFlixel", file : "FlxProject", fps : 60, name : "FlxProject", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "FlxProject", vsync : true, width : 960, x : null, y : null}]};
+	ApplicationMain.config = { build : "395", company : "HaxeFlixel", file : "FlxProject", fps : 60, name : "FlxProject", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "FlxProject", vsync : true, width : 960, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	var hasMain = false;
@@ -2272,7 +2272,7 @@ var DefaultAssetLibrary = function() {
 		_this12.h[id] = id;
 	}
 	var _this13 = this.type;
-	var value6 = "SOUND";
+	var value6 = "MUSIC";
 	if(__map_reserved[id] != null) {
 		_this13.setReserved(id,value6);
 	} else {
@@ -2356,7 +2356,7 @@ var DefaultAssetLibrary = function() {
 		_this24.h[id] = id;
 	}
 	var _this25 = this.type;
-	var value12 = "SOUND";
+	var value12 = "MUSIC";
 	if(__map_reserved[id] != null) {
 		_this25.setReserved(id,value12);
 	} else {
@@ -6061,7 +6061,7 @@ MenuState.prototype = $extend(flixel_FlxState.prototype,{
 		this.timer.start(2,$bind(this,this.changescreen),1);
 		this.add(this.btn);
 		this.add(this.btn2);
-		this.btn.setPosition(flixel_FlxG.width / 3 * 2 - (this.btn.get_width() | 0) / 2,flixel_FlxG.height / 2 + 80);
+		this.btn.setPosition(flixel_FlxG.width / 3 * 2 - (this.btn.get_width() | 0) / 2,flixel_FlxG.height / 2 + 20);
 		this.btn2.setPosition(flixel_FlxG.width / 3 * 2 - (this.btn2.get_width() | 0) / 2,this.btn.y + this.btn.get_height() + 15);
 		flixel_FlxG.sound.playMusic("assets/inicio.ogg");
 		this.img5 = new flixel_FlxSprite(0,0);
@@ -6100,6 +6100,7 @@ MenuState.prototype = $extend(flixel_FlxState.prototype,{
 				this.img4.loadGraphic("assets/placas_juego-01.png");
 				this.add(this.img4);
 				this.img3.set_visible(false);
+				this.img5.set_visible(false);
 				this.timer2.start(2.5,$bind(this,this.startchange),1);
 			}
 		}
@@ -6443,7 +6444,7 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		var _this = flixel_FlxG.worldBounds;
 		_this.x = 0;
 		_this.y = 0;
-		_this.width = 8000;
+		_this.width = 6000;
 		_this.height = 1000;
 		var bg = new flixel_addons_display_FlxBackdrop("assets/fondo.png",1,0,true,false);
 		var fg = new flixel_addons_display_FlxBackdrop("assets/piso.png",1,0,true,false);
