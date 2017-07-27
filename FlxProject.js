@@ -24,6 +24,10 @@ ApplicationMain.create = function() {
 	ApplicationMain.preloader.create(ApplicationMain.config);
 	var urls = [];
 	var types = [];
+	urls.push("assets/AtaqueBueno.ogg");
+	types.push("SOUND");
+	urls.push("assets/AtaqueMalo.ogg");
+	types.push("SOUND");
 	urls.push("assets/Boss.png");
 	types.push("IMAGE");
 	urls.push("assets/btnjugar.png");
@@ -32,12 +36,20 @@ ApplicationMain.create = function() {
 	types.push("IMAGE");
 	urls.push("assets/btnvolverajugar.png");
 	types.push("IMAGE");
+	urls.push("assets/cancion.ogg");
+	types.push("SOUND");
 	urls.push("assets/corazon.png");
 	types.push("IMAGE");
+	urls.push("assets/derrota.ogg");
+	types.push("SOUND");
+	urls.push("assets/DerrotaSonido.ogg");
+	types.push("SOUND");
 	urls.push("assets/eli.png");
 	types.push("IMAGE");
 	urls.push("assets/fondo.png");
 	types.push("IMAGE");
+	urls.push("assets/inicio.ogg");
+	types.push("SOUND");
 	urls.push("assets/itai.png");
 	types.push("IMAGE");
 	urls.push("assets/lilita.png");
@@ -62,44 +74,14 @@ ApplicationMain.create = function() {
 	types.push("IMAGE");
 	urls.push("assets/placas_juego-nada.png");
 	types.push("IMAGE");
-	urls.push("assets/Boss.png");
+	urls.push("assets/seleccionador.png");
 	types.push("IMAGE");
-	urls.push("assets/btnjugar.png");
-	types.push("IMAGE");
-	urls.push("assets/btnpropuestas.png");
-	types.push("IMAGE");
-	urls.push("assets/btnvolverajugar.png");
-	types.push("IMAGE");
-	urls.push("assets/corazon.png");
-	types.push("IMAGE");
-	urls.push("assets/eli.png");
-	types.push("IMAGE");
-	urls.push("assets/fondo.png");
-	types.push("IMAGE");
-	urls.push("assets/itai.png");
-	types.push("IMAGE");
-	urls.push("assets/lilita.png");
-	types.push("IMAGE");
-	urls.push("assets/logo_ABA01.png");
-	types.push("IMAGE");
-	urls.push("assets/lousteau.png");
-	types.push("IMAGE");
-	urls.push("assets/piso.png");
-	types.push("IMAGE");
-	urls.push("assets/placas_juego-01.png");
-	types.push("IMAGE");
-	urls.push("assets/placas_juego-06.png");
-	types.push("IMAGE");
-	urls.push("assets/placas_juego-09.png");
-	types.push("IMAGE");
-	urls.push("assets/placas_juego-14.png");
-	types.push("IMAGE");
-	urls.push("assets/placas_juego-14b.png");
-	types.push("IMAGE");
-	urls.push("assets/placas_juego-menu.png");
-	types.push("IMAGE");
-	urls.push("assets/placas_juego-nada.png");
-	types.push("IMAGE");
+	urls.push("assets/Select.ogg");
+	types.push("SOUND");
+	urls.push("assets/victoria.ogg");
+	types.push("SOUND");
+	urls.push("assets/VictoriaSonido.ogg");
+	types.push("SOUND");
 	urls.push("flixel/sounds/beep.ogg");
 	types.push("SOUND");
 	urls.push("flixel/sounds/flixel.ogg");
@@ -140,7 +122,7 @@ ApplicationMain.init = function() {
 	}
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "330", company : "HaxeFlixel", file : "FlxProject", fps : 60, name : "FlxProject", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "FlxProject", vsync : true, width : 960, x : null, y : null}]};
+	ApplicationMain.config = { build : "385", company : "HaxeFlixel", file : "FlxProject", fps : 60, name : "FlxProject", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "FlxProject", vsync : true, width : 960, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	var hasMain = false;
@@ -2198,7 +2180,7 @@ var DefaultAssetLibrary = function() {
 	lime_AssetLibrary.call(this);
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf);
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf);
-	var id = "assets/Boss.png";
+	var id = "assets/AtaqueBueno.ogg";
 	var _this = this.path;
 	if(__map_reserved[id] != null) {
 		_this.setReserved(id,id);
@@ -2206,13 +2188,13 @@ var DefaultAssetLibrary = function() {
 		_this.h[id] = id;
 	}
 	var _this1 = this.type;
-	var value = "IMAGE";
+	var value = "SOUND";
 	if(__map_reserved[id] != null) {
 		_this1.setReserved(id,value);
 	} else {
 		_this1.h[id] = value;
 	}
-	id = "assets/btnjugar.png";
+	id = "assets/AtaqueMalo.ogg";
 	var _this2 = this.path;
 	if(__map_reserved[id] != null) {
 		_this2.setReserved(id,id);
@@ -2220,13 +2202,13 @@ var DefaultAssetLibrary = function() {
 		_this2.h[id] = id;
 	}
 	var _this3 = this.type;
-	var value1 = "IMAGE";
+	var value1 = "SOUND";
 	if(__map_reserved[id] != null) {
 		_this3.setReserved(id,value1);
 	} else {
 		_this3.h[id] = value1;
 	}
-	id = "assets/btnpropuestas.png";
+	id = "assets/Boss.png";
 	var _this4 = this.path;
 	if(__map_reserved[id] != null) {
 		_this4.setReserved(id,id);
@@ -2240,7 +2222,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this5.h[id] = value2;
 	}
-	id = "assets/btnvolverajugar.png";
+	id = "assets/btnjugar.png";
 	var _this6 = this.path;
 	if(__map_reserved[id] != null) {
 		_this6.setReserved(id,id);
@@ -2254,7 +2236,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this7.h[id] = value3;
 	}
-	id = "assets/corazon.png";
+	id = "assets/btnpropuestas.png";
 	var _this8 = this.path;
 	if(__map_reserved[id] != null) {
 		_this8.setReserved(id,id);
@@ -2268,7 +2250,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this9.h[id] = value4;
 	}
-	id = "assets/eli.png";
+	id = "assets/btnvolverajugar.png";
 	var _this10 = this.path;
 	if(__map_reserved[id] != null) {
 		_this10.setReserved(id,id);
@@ -2282,7 +2264,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this11.h[id] = value5;
 	}
-	id = "assets/fondo.png";
+	id = "assets/cancion.ogg";
 	var _this12 = this.path;
 	if(__map_reserved[id] != null) {
 		_this12.setReserved(id,id);
@@ -2290,13 +2272,13 @@ var DefaultAssetLibrary = function() {
 		_this12.h[id] = id;
 	}
 	var _this13 = this.type;
-	var value6 = "IMAGE";
+	var value6 = "SOUND";
 	if(__map_reserved[id] != null) {
 		_this13.setReserved(id,value6);
 	} else {
 		_this13.h[id] = value6;
 	}
-	id = "assets/itai.png";
+	id = "assets/corazon.png";
 	var _this14 = this.path;
 	if(__map_reserved[id] != null) {
 		_this14.setReserved(id,id);
@@ -2310,7 +2292,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this15.h[id] = value7;
 	}
-	id = "assets/lilita.png";
+	id = "assets/derrota.ogg";
 	var _this16 = this.path;
 	if(__map_reserved[id] != null) {
 		_this16.setReserved(id,id);
@@ -2318,13 +2300,13 @@ var DefaultAssetLibrary = function() {
 		_this16.h[id] = id;
 	}
 	var _this17 = this.type;
-	var value8 = "IMAGE";
+	var value8 = "SOUND";
 	if(__map_reserved[id] != null) {
 		_this17.setReserved(id,value8);
 	} else {
 		_this17.h[id] = value8;
 	}
-	id = "assets/logo_ABA01.png";
+	id = "assets/DerrotaSonido.ogg";
 	var _this18 = this.path;
 	if(__map_reserved[id] != null) {
 		_this18.setReserved(id,id);
@@ -2332,13 +2314,13 @@ var DefaultAssetLibrary = function() {
 		_this18.h[id] = id;
 	}
 	var _this19 = this.type;
-	var value9 = "IMAGE";
+	var value9 = "SOUND";
 	if(__map_reserved[id] != null) {
 		_this19.setReserved(id,value9);
 	} else {
 		_this19.h[id] = value9;
 	}
-	id = "assets/lousteau.png";
+	id = "assets/eli.png";
 	var _this20 = this.path;
 	if(__map_reserved[id] != null) {
 		_this20.setReserved(id,id);
@@ -2352,7 +2334,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this21.h[id] = value10;
 	}
-	id = "assets/piso.png";
+	id = "assets/fondo.png";
 	var _this22 = this.path;
 	if(__map_reserved[id] != null) {
 		_this22.setReserved(id,id);
@@ -2366,7 +2348,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this23.h[id] = value11;
 	}
-	id = "assets/placas_juego-01.png";
+	id = "assets/inicio.ogg";
 	var _this24 = this.path;
 	if(__map_reserved[id] != null) {
 		_this24.setReserved(id,id);
@@ -2374,13 +2356,13 @@ var DefaultAssetLibrary = function() {
 		_this24.h[id] = id;
 	}
 	var _this25 = this.type;
-	var value12 = "IMAGE";
+	var value12 = "SOUND";
 	if(__map_reserved[id] != null) {
 		_this25.setReserved(id,value12);
 	} else {
 		_this25.h[id] = value12;
 	}
-	id = "assets/placas_juego-06.png";
+	id = "assets/itai.png";
 	var _this26 = this.path;
 	if(__map_reserved[id] != null) {
 		_this26.setReserved(id,id);
@@ -2394,7 +2376,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this27.h[id] = value13;
 	}
-	id = "assets/placas_juego-09.png";
+	id = "assets/lilita.png";
 	var _this28 = this.path;
 	if(__map_reserved[id] != null) {
 		_this28.setReserved(id,id);
@@ -2408,7 +2390,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this29.h[id] = value14;
 	}
-	id = "assets/placas_juego-14.png";
+	id = "assets/logo_ABA01.png";
 	var _this30 = this.path;
 	if(__map_reserved[id] != null) {
 		_this30.setReserved(id,id);
@@ -2422,7 +2404,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this31.h[id] = value15;
 	}
-	id = "assets/placas_juego-14b.png";
+	id = "assets/lousteau.png";
 	var _this32 = this.path;
 	if(__map_reserved[id] != null) {
 		_this32.setReserved(id,id);
@@ -2436,7 +2418,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this33.h[id] = value16;
 	}
-	id = "assets/placas_juego-menu.png";
+	id = "assets/piso.png";
 	var _this34 = this.path;
 	if(__map_reserved[id] != null) {
 		_this34.setReserved(id,id);
@@ -2450,7 +2432,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this35.h[id] = value17;
 	}
-	id = "assets/placas_juego-nada.png";
+	id = "assets/placas_juego-01.png";
 	var _this36 = this.path;
 	if(__map_reserved[id] != null) {
 		_this36.setReserved(id,id);
@@ -2464,7 +2446,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this37.h[id] = value18;
 	}
-	id = "assets/Boss.png";
+	id = "assets/placas_juego-06.png";
 	var _this38 = this.path;
 	if(__map_reserved[id] != null) {
 		_this38.setReserved(id,id);
@@ -2478,7 +2460,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this39.h[id] = value19;
 	}
-	id = "assets/btnjugar.png";
+	id = "assets/placas_juego-09.png";
 	var _this40 = this.path;
 	if(__map_reserved[id] != null) {
 		_this40.setReserved(id,id);
@@ -2492,7 +2474,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this41.h[id] = value20;
 	}
-	id = "assets/btnpropuestas.png";
+	id = "assets/placas_juego-14.png";
 	var _this42 = this.path;
 	if(__map_reserved[id] != null) {
 		_this42.setReserved(id,id);
@@ -2506,7 +2488,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this43.h[id] = value21;
 	}
-	id = "assets/btnvolverajugar.png";
+	id = "assets/placas_juego-14b.png";
 	var _this44 = this.path;
 	if(__map_reserved[id] != null) {
 		_this44.setReserved(id,id);
@@ -2520,7 +2502,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this45.h[id] = value22;
 	}
-	id = "assets/corazon.png";
+	id = "assets/placas_juego-menu.png";
 	var _this46 = this.path;
 	if(__map_reserved[id] != null) {
 		_this46.setReserved(id,id);
@@ -2534,7 +2516,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this47.h[id] = value23;
 	}
-	id = "assets/eli.png";
+	id = "assets/placas_juego-nada.png";
 	var _this48 = this.path;
 	if(__map_reserved[id] != null) {
 		_this48.setReserved(id,id);
@@ -2548,7 +2530,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this49.h[id] = value24;
 	}
-	id = "assets/fondo.png";
+	id = "assets/seleccionador.png";
 	var _this50 = this.path;
 	if(__map_reserved[id] != null) {
 		_this50.setReserved(id,id);
@@ -2562,7 +2544,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this51.h[id] = value25;
 	}
-	id = "assets/itai.png";
+	id = "assets/Select.ogg";
 	var _this52 = this.path;
 	if(__map_reserved[id] != null) {
 		_this52.setReserved(id,id);
@@ -2570,13 +2552,13 @@ var DefaultAssetLibrary = function() {
 		_this52.h[id] = id;
 	}
 	var _this53 = this.type;
-	var value26 = "IMAGE";
+	var value26 = "SOUND";
 	if(__map_reserved[id] != null) {
 		_this53.setReserved(id,value26);
 	} else {
 		_this53.h[id] = value26;
 	}
-	id = "assets/lilita.png";
+	id = "assets/victoria.ogg";
 	var _this54 = this.path;
 	if(__map_reserved[id] != null) {
 		_this54.setReserved(id,id);
@@ -2584,13 +2566,13 @@ var DefaultAssetLibrary = function() {
 		_this54.h[id] = id;
 	}
 	var _this55 = this.type;
-	var value27 = "IMAGE";
+	var value27 = "SOUND";
 	if(__map_reserved[id] != null) {
 		_this55.setReserved(id,value27);
 	} else {
 		_this55.h[id] = value27;
 	}
-	id = "assets/logo_ABA01.png";
+	id = "assets/VictoriaSonido.ogg";
 	var _this56 = this.path;
 	if(__map_reserved[id] != null) {
 		_this56.setReserved(id,id);
@@ -2598,13 +2580,13 @@ var DefaultAssetLibrary = function() {
 		_this56.h[id] = id;
 	}
 	var _this57 = this.type;
-	var value28 = "IMAGE";
+	var value28 = "SOUND";
 	if(__map_reserved[id] != null) {
 		_this57.setReserved(id,value28);
 	} else {
 		_this57.h[id] = value28;
 	}
-	id = "assets/lousteau.png";
+	id = "flixel/sounds/beep.ogg";
 	var _this58 = this.path;
 	if(__map_reserved[id] != null) {
 		_this58.setReserved(id,id);
@@ -2612,13 +2594,13 @@ var DefaultAssetLibrary = function() {
 		_this58.h[id] = id;
 	}
 	var _this59 = this.type;
-	var value29 = "IMAGE";
+	var value29 = "SOUND";
 	if(__map_reserved[id] != null) {
 		_this59.setReserved(id,value29);
 	} else {
 		_this59.h[id] = value29;
 	}
-	id = "assets/piso.png";
+	id = "flixel/sounds/flixel.ogg";
 	var _this60 = this.path;
 	if(__map_reserved[id] != null) {
 		_this60.setReserved(id,id);
@@ -2626,41 +2608,43 @@ var DefaultAssetLibrary = function() {
 		_this60.h[id] = id;
 	}
 	var _this61 = this.type;
-	var value30 = "IMAGE";
+	var value30 = "SOUND";
 	if(__map_reserved[id] != null) {
 		_this61.setReserved(id,value30);
 	} else {
 		_this61.h[id] = value30;
 	}
-	id = "assets/placas_juego-01.png";
-	var _this62 = this.path;
+	id = "flixel/fonts/nokiafc22.ttf";
+	var _this62 = this.className;
+	var value31 = _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf;
 	if(__map_reserved[id] != null) {
-		_this62.setReserved(id,id);
+		_this62.setReserved(id,value31);
 	} else {
-		_this62.h[id] = id;
+		_this62.h[id] = value31;
 	}
 	var _this63 = this.type;
-	var value31 = "IMAGE";
+	var value32 = "FONT";
 	if(__map_reserved[id] != null) {
-		_this63.setReserved(id,value31);
+		_this63.setReserved(id,value32);
 	} else {
-		_this63.h[id] = value31;
+		_this63.h[id] = value32;
 	}
-	id = "assets/placas_juego-06.png";
-	var _this64 = this.path;
+	id = "flixel/fonts/monsterrat.ttf";
+	var _this64 = this.className;
+	var value33 = _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf;
 	if(__map_reserved[id] != null) {
-		_this64.setReserved(id,id);
+		_this64.setReserved(id,value33);
 	} else {
-		_this64.h[id] = id;
+		_this64.h[id] = value33;
 	}
 	var _this65 = this.type;
-	var value32 = "IMAGE";
+	var value34 = "FONT";
 	if(__map_reserved[id] != null) {
-		_this65.setReserved(id,value32);
+		_this65.setReserved(id,value34);
 	} else {
-		_this65.h[id] = value32;
+		_this65.h[id] = value34;
 	}
-	id = "assets/placas_juego-09.png";
+	id = "flixel/images/ui/button.png";
 	var _this66 = this.path;
 	if(__map_reserved[id] != null) {
 		_this66.setReserved(id,id);
@@ -2668,13 +2652,13 @@ var DefaultAssetLibrary = function() {
 		_this66.h[id] = id;
 	}
 	var _this67 = this.type;
-	var value33 = "IMAGE";
+	var value35 = "IMAGE";
 	if(__map_reserved[id] != null) {
-		_this67.setReserved(id,value33);
+		_this67.setReserved(id,value35);
 	} else {
-		_this67.h[id] = value33;
+		_this67.h[id] = value35;
 	}
-	id = "assets/placas_juego-14.png";
+	id = "flixel/images/logo/default.png";
 	var _this68 = this.path;
 	if(__map_reserved[id] != null) {
 		_this68.setReserved(id,id);
@@ -2682,139 +2666,11 @@ var DefaultAssetLibrary = function() {
 		_this68.h[id] = id;
 	}
 	var _this69 = this.type;
-	var value34 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this69.setReserved(id,value34);
-	} else {
-		_this69.h[id] = value34;
-	}
-	id = "assets/placas_juego-14b.png";
-	var _this70 = this.path;
-	if(__map_reserved[id] != null) {
-		_this70.setReserved(id,id);
-	} else {
-		_this70.h[id] = id;
-	}
-	var _this71 = this.type;
-	var value35 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this71.setReserved(id,value35);
-	} else {
-		_this71.h[id] = value35;
-	}
-	id = "assets/placas_juego-menu.png";
-	var _this72 = this.path;
-	if(__map_reserved[id] != null) {
-		_this72.setReserved(id,id);
-	} else {
-		_this72.h[id] = id;
-	}
-	var _this73 = this.type;
 	var value36 = "IMAGE";
 	if(__map_reserved[id] != null) {
-		_this73.setReserved(id,value36);
+		_this69.setReserved(id,value36);
 	} else {
-		_this73.h[id] = value36;
-	}
-	id = "assets/placas_juego-nada.png";
-	var _this74 = this.path;
-	if(__map_reserved[id] != null) {
-		_this74.setReserved(id,id);
-	} else {
-		_this74.h[id] = id;
-	}
-	var _this75 = this.type;
-	var value37 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this75.setReserved(id,value37);
-	} else {
-		_this75.h[id] = value37;
-	}
-	id = "flixel/sounds/beep.ogg";
-	var _this76 = this.path;
-	if(__map_reserved[id] != null) {
-		_this76.setReserved(id,id);
-	} else {
-		_this76.h[id] = id;
-	}
-	var _this77 = this.type;
-	var value38 = "SOUND";
-	if(__map_reserved[id] != null) {
-		_this77.setReserved(id,value38);
-	} else {
-		_this77.h[id] = value38;
-	}
-	id = "flixel/sounds/flixel.ogg";
-	var _this78 = this.path;
-	if(__map_reserved[id] != null) {
-		_this78.setReserved(id,id);
-	} else {
-		_this78.h[id] = id;
-	}
-	var _this79 = this.type;
-	var value39 = "SOUND";
-	if(__map_reserved[id] != null) {
-		_this79.setReserved(id,value39);
-	} else {
-		_this79.h[id] = value39;
-	}
-	id = "flixel/fonts/nokiafc22.ttf";
-	var _this80 = this.className;
-	var value40 = _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf;
-	if(__map_reserved[id] != null) {
-		_this80.setReserved(id,value40);
-	} else {
-		_this80.h[id] = value40;
-	}
-	var _this81 = this.type;
-	var value41 = "FONT";
-	if(__map_reserved[id] != null) {
-		_this81.setReserved(id,value41);
-	} else {
-		_this81.h[id] = value41;
-	}
-	id = "flixel/fonts/monsterrat.ttf";
-	var _this82 = this.className;
-	var value42 = _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf;
-	if(__map_reserved[id] != null) {
-		_this82.setReserved(id,value42);
-	} else {
-		_this82.h[id] = value42;
-	}
-	var _this83 = this.type;
-	var value43 = "FONT";
-	if(__map_reserved[id] != null) {
-		_this83.setReserved(id,value43);
-	} else {
-		_this83.h[id] = value43;
-	}
-	id = "flixel/images/ui/button.png";
-	var _this84 = this.path;
-	if(__map_reserved[id] != null) {
-		_this84.setReserved(id,id);
-	} else {
-		_this84.h[id] = id;
-	}
-	var _this85 = this.type;
-	var value44 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this85.setReserved(id,value44);
-	} else {
-		_this85.h[id] = value44;
-	}
-	id = "flixel/images/logo/default.png";
-	var _this86 = this.path;
-	if(__map_reserved[id] != null) {
-		_this86.setReserved(id,id);
-	} else {
-		_this86.h[id] = id;
-	}
-	var _this87 = this.type;
-	var value45 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this87.setReserved(id,value45);
-	} else {
-		_this87.h[id] = value45;
+		_this69.h[id] = value36;
 	}
 	var assetsPrefix = null;
 	if(ApplicationMain.config != null && Object.prototype.hasOwnProperty.call(ApplicationMain.config,"assetsPrefix")) {
@@ -2825,13 +2681,13 @@ var DefaultAssetLibrary = function() {
 		while(k.hasNext()) {
 			var k1 = k.next();
 			var this1 = this.path;
-			var _this88 = this.path;
-			var value46 = assetsPrefix + (__map_reserved[k1] != null ? _this88.getReserved(k1) : _this88.h[k1]);
-			var _this89 = this1;
+			var _this70 = this.path;
+			var value37 = assetsPrefix + (__map_reserved[k1] != null ? _this70.getReserved(k1) : _this70.h[k1]);
+			var _this71 = this1;
 			if(__map_reserved[k1] != null) {
-				_this89.setReserved(k1,value46);
+				_this71.setReserved(k1,value37);
 			} else {
-				_this89.h[k1] = value46;
+				_this71.h[k1] = value37;
 			}
 		}
 	}
@@ -3839,10 +3695,16 @@ EndState.__super__ = flixel_FlxState;
 EndState.prototype = $extend(flixel_FlxState.prototype,{
 	create: function() {
 		flixel_FlxState.prototype.create.call(this);
+		var _this = flixel_FlxG.sound.music;
+		_this.cleanup(_this.autoDestroy,true);
 		var spr = new flixel_FlxSprite(0,0);
 		if(PlayState.txtP == "Victoria") {
+			flixel_FlxG.sound.play("assets/VictoriaSonido.ogg");
+			flixel_FlxG.sound.playMusic("assets/victoria.ogg");
 			spr.loadGraphic("assets/placas_juego-09.png");
 		} else if(PlayState.txtP == "Derrota") {
+			flixel_FlxG.sound.play("assets/DerrotaSonido.ogg");
+			flixel_FlxG.sound.playMusic("assets/derrota.ogg");
 			spr.loadGraphic("assets/placas_juego-14.png");
 		}
 		this.add(spr);
@@ -3850,9 +3712,11 @@ EndState.prototype = $extend(flixel_FlxState.prototype,{
 		btn.loadGraphic("assets/btnvolverajugar.png",true,80,20);
 		this.add(btn);
 		btn.setGraphicSize(240,60);
+		btn.updateHitbox();
 		btn.setPosition(flixel_FlxG.width / 2 - btn.get_width() / 2,flixel_FlxG.height / 2);
 	}
 	,reiniciar: function() {
+		flixel_FlxG.sound.play("assets/Select.ogg");
 		var nextState = new MenuState();
 		if(flixel_FlxG.game._state.switchTo(nextState)) {
 			flixel_FlxG.game._requestedState = nextState;
@@ -5951,14 +5815,14 @@ var Enemigo = function(X,Y,_p) {
 	this.updateHitbox();
 	this.setSize(32,128);
 	this.centerOffsets();
-	this.velocidad = 30 + (_p.score / 2000 | 0);
-	if(this.velocidad < 50) {
-		this.velocidad = 50;
+	Enemigo.velocidad = 30 + (_p.score / 2000 | 0);
+	if(Enemigo.velocidad < 50) {
+		Enemigo.velocidad = 50;
 	}
 	if(this.x < _p.x) {
-		this.velocity.set(50,0);
+		this.velocity.set(Enemigo.velocidad,0);
 	} else {
-		this.velocity.set(-50,0);
+		this.velocity.set(-Enemigo.velocidad,0);
 		this.set_flipX(true);
 	}
 	this.personaje = _p;
@@ -5966,12 +5830,22 @@ var Enemigo = function(X,Y,_p) {
 };
 $hxClasses["Enemigo"] = Enemigo;
 Enemigo.__name__ = ["Enemigo"];
+Enemigo.velocidad = null;
 Enemigo.__super__ = flixel_FlxSprite;
 Enemigo.prototype = $extend(flixel_FlxSprite.prototype,{
 	update: function(elapsed) {
 		flixel_FlxSprite.prototype.update.call(this,elapsed);
+		if(this.velocity.x != Enemigo.velocidad && this.velocity.x != -Enemigo.velocidad) {
+			this.velocity.set(Enemigo.velocidad,0);
+			if(this.x < this.personaje.x) {
+				this.velocity.set(Enemigo.velocidad,0);
+			} else {
+				this.velocity.set(-Enemigo.velocidad,0);
+				this.set_flipX(true);
+			}
+		}
 		this.cont++;
-		if(!this.ataco) {
+		if(!this.ataco && this.alive) {
 			var dist;
 			if(this.x > this.personaje.x) {
 				dist = this.x - this.personaje.x;
@@ -5997,6 +5871,7 @@ Enemigo.prototype = $extend(flixel_FlxSprite.prototype,{
 	}
 	,atacar: function(p,o) {
 		if(this.alive) {
+			flixel_FlxG.sound.play("assets/AtaqueMalo.ogg");
 			this.ataco = true;
 			this.personaje.atacado();
 			this.kill();
@@ -6007,6 +5882,7 @@ Enemigo.prototype = $extend(flixel_FlxSprite.prototype,{
 		this.animation.stop();
 		this.animation.play("muerte");
 		this.velocity.set(0,0);
+		this.setSize(0,0);
 		var a1 = this;
 		var tmp = function(f) {
 			flixel_util_FlxSpriteUtil.alphaTween(a1,f);
@@ -6015,6 +5891,7 @@ Enemigo.prototype = $extend(flixel_FlxSprite.prototype,{
 	}
 	,onComplete: function(tween) {
 		flixel_FlxSprite.prototype.kill.call(this);
+		this.destroy();
 	}
 	,__class__: Enemigo
 });
@@ -6186,20 +6063,36 @@ MenuState.prototype = $extend(flixel_FlxState.prototype,{
 		this.add(this.btn2);
 		this.btn.setPosition(flixel_FlxG.width / 3 * 2 - (this.btn.get_width() | 0) / 2,flixel_FlxG.height / 2 + 80);
 		this.btn2.setPosition(flixel_FlxG.width / 3 * 2 - (this.btn2.get_width() | 0) / 2,this.btn.y + this.btn.get_height() + 15);
+		flixel_FlxG.sound.playMusic("assets/inicio.ogg");
+		this.img5 = new flixel_FlxSprite(0,0);
+		this.img5.loadGraphic("assets/seleccionador.png");
+		this.img5.set_visible(false);
 	}
 	,update: function(elapsed) {
 		flixel_FlxState.prototype.update.call(this,elapsed);
 		if(this.aux) {
+			var x = flixel_FlxG.mouse.x;
+			var y = flixel_FlxG.mouse.y;
 			if(flixel_FlxG.mouse._leftButton.current == 2) {
-				var x = flixel_FlxG.mouse.x;
-				var y = flixel_FlxG.mouse.y;
 				if(x > 41 && x < 425 && y > 188 && y < 576) {
+					flixel_FlxG.sound.play("assets/Select.ogg");
 					this.p = "itai";
 					this.aux = false;
 				}
 				if(x > 536 && x < 920 && y > 188 && y < 576) {
+					flixel_FlxG.sound.play("assets/Select.ogg");
 					this.p = "eli";
 					this.aux = false;
+				}
+			} else {
+				this.img5.set_visible(false);
+				if(x > 41 && x < 425 && y > 120 && y < 506) {
+					this.img5.set_visible(true);
+					this.img5.setPosition(41,120);
+				}
+				if(x > 536 && x < 920 && y > 120 && y < 506) {
+					this.img5.set_visible(true);
+					this.img5.setPosition(536,120);
 				}
 			}
 			if(!this.aux) {
@@ -6218,6 +6111,11 @@ MenuState.prototype = $extend(flixel_FlxState.prototype,{
 		var _g = this.img4;
 		_g.set_alpha(_g.alpha - 0.05);
 		if(this.img4.alpha == 0) {
+			var _this = flixel_FlxG.sound.music;
+			if(_this.fadeTween != null) {
+				_this.fadeTween.cancel();
+			}
+			_this.fadeTween = flixel_tweens_FlxTween.num(_this._volume,0,1,{ onComplete : null},$bind(_this,_this.volumeTween));
 			PlayState.txtP = this.p;
 			var nextState = new PlayState();
 			if(flixel_FlxG.game._state.switchTo(nextState)) {
@@ -6236,9 +6134,11 @@ MenuState.prototype = $extend(flixel_FlxState.prototype,{
 		this.btn2.set_visible(true);
 	}
 	,links: function() {
+		flixel_FlxG.sound.play("assets/Select.ogg");
 		openfl_Lib.getURL(new openfl_net_URLRequest("https://ahorabuenosaires.info/propuestas/"));
 	}
 	,jugar: function() {
+		flixel_FlxG.sound.play("assets/Select.ogg");
 		this.btn.set_visible(false);
 		this.btn2.set_visible(false);
 		this.img2.set_visible(false);
@@ -6248,6 +6148,7 @@ MenuState.prototype = $extend(flixel_FlxState.prototype,{
 		this.img4.loadGraphic("assets/placas_juego-nada.png");
 		this.add(this.img4);
 		this.add(this.img3);
+		this.add(this.img5);
 		this.aux = true;
 	}
 	,__class__: MenuState
@@ -6493,11 +6394,10 @@ Personaje.prototype = $extend(flixel_FlxSprite.prototype,{
 	}
 	,matarenemigo: function(obj1,obj2) {
 		obj2.kill();
-		this.score += 500;
-		PlayState.conte -= 0.5;
-		if(PlayState.conte % 1 != 0) {
-			this.crearEnemigo();
-		}
+		this.score += 1000;
+		PlayState.conte -= 1;
+		flixel_FlxG.sound.play("assets/AtaqueBueno.ogg");
+		this.crearEnemigo();
 		if(this.score == 100000) {
 			PlayState.txtP = "Victoria";
 			var nextState = new EndState();
@@ -6510,7 +6410,8 @@ Personaje.prototype = $extend(flixel_FlxSprite.prototype,{
 		var _x;
 		var enemigo;
 		while(true) {
-			_x = Std.random(flixel_FlxG.worldBounds.width | 0);
+			_x = Std.random(flixel_FlxG.worldBounds.width + 3000 | 0);
+			_x -= 1500;
 			var _g1 = 0;
 			var _g = this.enemigos.group.length;
 			while(_g1 < _g) {
@@ -6542,7 +6443,7 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		var _this = flixel_FlxG.worldBounds;
 		_this.x = 0;
 		_this.y = 0;
-		_this.width = 12000;
+		_this.width = 8000;
 		_this.height = 1000;
 		var bg = new flixel_addons_display_FlxBackdrop("assets/fondo.png",1,0,true,false);
 		var fg = new flixel_addons_display_FlxBackdrop("assets/piso.png",1,0,true,false);
@@ -6566,6 +6467,17 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		this.vidas = new Vidas(this.personaje);
 		this.scrtxt = new Score(0,50,0,"VOTOS 00000",24,true,this.personaje);
 		this.scrtxt.set_color(4791377);
+		var _this2 = flixel_FlxG.sound.music;
+		_this2.cleanup(_this2.autoDestroy,true);
+		flixel_FlxG.sound.playMusic("assets/cancion.ogg",0.7);
+		var _this3 = flixel_FlxG.sound.music;
+		if(_this3._channel == null) {
+			_this3.play();
+		}
+		if(_this3.fadeTween != null) {
+			_this3.fadeTween.cancel();
+		}
+		_this3.fadeTween = flixel_tweens_FlxTween.num(0,0.7,1,{ onComplete : null},$bind(_this3,_this3.volumeTween));
 		var _g3 = this.personaje;
 		_g3.set_x(_g3.x + 1);
 	}
@@ -7430,6 +7342,7 @@ Score.prototype = $extend(flixel_text_FlxText.prototype,{
 				this.t += this.s;
 			}
 			this.set_text(this.t);
+			Enemigo.velocidad = 50 + (this.personaje.score / 2000 | 0);
 		}
 	}
 	,__class__: Score
@@ -11605,6 +11518,7 @@ flixel_FlxG.touches = null;
 flixel_FlxG.keys = null;
 flixel_FlxG.vcr = null;
 flixel_FlxG.plugins = null;
+flixel_FlxG.sound = null;
 flixel_FlxG.resizeGame = function(Width,Height) {
 	flixel_FlxG.scaleMode.onMeasure(Width,Height);
 };
@@ -11678,6 +11592,7 @@ flixel_FlxG.init = function(Game,Width,Height,Zoom) {
 	flixel_FlxG.save.bind("flixel");
 	flixel_FlxG.plugins = new flixel_system_frontEnds_PluginFrontEnd();
 	flixel_FlxG.vcr = new flixel_system_frontEnds_VCRFrontEnd();
+	flixel_FlxG.sound = new flixel_system_frontEnds_SoundFrontEnd();
 };
 flixel_FlxG.initRenderMethod = function() {
 	flixel_FlxG.renderMethod = flixel_FlxRenderMethod.BLITTING;
@@ -11713,6 +11628,7 @@ flixel_FlxG.reset = function() {
 	_this.initialSeed = (_this.internalSeed = (lowerBound2 > 2147483646 ? 2147483646 : lowerBound2) | 0) | 0;
 	flixel_FlxG.bitmap.reset();
 	flixel_FlxG.inputs.reset();
+	flixel_FlxG.sound.destroy(true);
 	flixel_FlxG.autoPause = true;
 	flixel_FlxG.fixedTimestep = true;
 	flixel_FlxG.timeScale = 1.0;
@@ -11900,6 +11816,7 @@ flixel_FlxGame.prototype = $extend(openfl_display_Sprite.prototype,{
 			this._focusLostScreen.set_visible(false);
 		}
 		this.stage.set_frameRate(flixel_FlxG.drawFramerate);
+		flixel_FlxG.sound.onFocus();
 		var _g = 0;
 		var _g1 = flixel_FlxG.inputs.list;
 		while(_g < _g1.length) {
@@ -11919,6 +11836,7 @@ flixel_FlxGame.prototype = $extend(openfl_display_Sprite.prototype,{
 			this._focusLostScreen.set_visible(true);
 		}
 		this.stage.set_frameRate(this.focusLostFramerate);
+		flixel_FlxG.sound.onFocusLost();
 		var _g = 0;
 		var _g1 = flixel_FlxG.inputs.list;
 		while(_g < _g1.length) {
@@ -11987,6 +11905,7 @@ flixel_FlxGame.prototype = $extend(openfl_display_Sprite.prototype,{
 	,switchState: function() {
 		flixel_FlxG.cameras.reset();
 		flixel_FlxG.inputs.onStateSwitch();
+		flixel_FlxG.sound.destroy();
 		flixel_FlxG.signals.stateSwitched.dispatch();
 		if(this._state != null) {
 			this._state.destroy();
@@ -12035,6 +11954,7 @@ flixel_FlxGame.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.updateElapsed();
 		flixel_FlxG.signals.preUpdate.dispatch();
 		this.updateInput();
+		flixel_FlxG.sound.update(flixel_FlxG.elapsed);
 		var elapsed = flixel_FlxG.elapsed;
 		var _g = 0;
 		var _g1 = flixel_FlxG.plugins.list;
@@ -23287,7 +23207,7 @@ flixel_system_FlxSound.prototype = $extend(flixel_FlxBasic.prototype,{
 		this.y = Y;
 	}
 	,updateTransform: function() {
-		this._transform.volume = (this.group != null ? this.group.volume : 1) * this._volume * this._volumeAdjust;
+		this._transform.volume = (flixel_FlxG.sound.muted ? 0 : 1) * flixel_FlxG.sound.volume * (this.group != null ? this.group.volume : 1) * this._volume * this._volumeAdjust;
 		if(this._channel != null) {
 			this._channel.set_soundTransform(this._transform);
 		}
@@ -23341,6 +23261,15 @@ flixel_system_FlxSound.prototype = $extend(flixel_FlxBasic.prototype,{
 		this.name = this._sound.get_id3().songName;
 		this.artist = this._sound.get_id3().artist;
 		this._sound.removeEventListener("id3",$bind(this,this.gotID3));
+	}
+	,onFocus: function() {
+		if(!this._alreadyPaused) {
+			this.resume();
+		}
+	}
+	,onFocusLost: function() {
+		this._alreadyPaused = this._paused;
+		this.pause();
 	}
 	,set_group: function(group) {
 		if(this.group != group) {
@@ -23489,6 +23418,9 @@ flixel_system_FlxSplash.prototype = $extend(flixel_FlxState.prototype,{
 		this._text.set_text("HaxeFlixel");
 		openfl_Lib.current.stage.addChild(this._text);
 		this.onResize(stageWidth,stageHeight);
+		var extension = "";
+		extension = ".ogg";
+		flixel_FlxG.sound.load(openfl_Assets.getSound("flixel/sounds/flixel" + extension)).play();
 	}
 	,destroy: function() {
 		this._sprite = null;
@@ -25501,6 +25433,253 @@ flixel_system_frontEnds_PluginFrontEnd.prototype = {
 		}
 	}
 	,__class__: flixel_system_frontEnds_PluginFrontEnd
+};
+var flixel_system_frontEnds_SoundFrontEnd = function() {
+	this.volume = 1;
+	this.list = new flixel_group_FlxTypedGroup();
+	this.defaultSoundGroup = new flixel_system_FlxSoundGroup();
+	this.defaultMusicGroup = new flixel_system_FlxSoundGroup();
+	this.soundTrayEnabled = true;
+	this.muteKeys = [48,96];
+	this.volumeDownKeys = [189,109];
+	this.volumeUpKeys = [187,107];
+	this.muted = false;
+	this.loadSavedPrefs();
+};
+$hxClasses["flixel.system.frontEnds.SoundFrontEnd"] = flixel_system_frontEnds_SoundFrontEnd;
+flixel_system_frontEnds_SoundFrontEnd.__name__ = ["flixel","system","frontEnds","SoundFrontEnd"];
+flixel_system_frontEnds_SoundFrontEnd.prototype = {
+	playMusic: function(Music,Volume,Looped,Group) {
+		if(Looped == null) {
+			Looped = true;
+		}
+		if(Volume == null) {
+			Volume = 1;
+		}
+		if(this.music == null) {
+			this.music = new flixel_system_FlxSound();
+		} else if(this.music.active) {
+			var _this = this.music;
+			_this.cleanup(_this.autoDestroy,true);
+		}
+		this.music.loadEmbedded(Music,Looped);
+		this.music.set_volume(Volume);
+		this.music.persist = true;
+		this.music.set_group(Group == null ? this.defaultMusicGroup : Group);
+		this.music.play();
+	}
+	,load: function(EmbeddedSound,Volume,Looped,Group,AutoDestroy,AutoPlay,URL,OnComplete) {
+		if(AutoPlay == null) {
+			AutoPlay = false;
+		}
+		if(AutoDestroy == null) {
+			AutoDestroy = false;
+		}
+		if(Looped == null) {
+			Looped = false;
+		}
+		if(Volume == null) {
+			Volume = 1;
+		}
+		if(EmbeddedSound == null && URL == null) {
+			var _this = flixel_FlxG.log;
+			return null;
+		}
+		var sound = this.list.recycle(flixel_system_FlxSound);
+		if(EmbeddedSound != null) {
+			sound.loadEmbedded(EmbeddedSound,Looped,AutoDestroy,OnComplete);
+		} else {
+			sound.loadStream(URL,Looped,AutoDestroy,OnComplete);
+		}
+		sound.set_volume(Volume);
+		if(AutoPlay) {
+			sound.play();
+		}
+		sound.set_group(Group == null ? this.defaultSoundGroup : Group);
+		return sound;
+	}
+	,cache: function(EmbeddedSound) {
+		if(openfl_Assets.exists(EmbeddedSound,"SOUND") || openfl_Assets.exists(EmbeddedSound,"MUSIC")) {
+			return openfl_Assets.getSound(EmbeddedSound,true);
+		}
+		var _this = flixel_FlxG.log;
+		return null;
+	}
+	,cacheAll: function() {
+		var _g = 0;
+		var _g1 = openfl_Assets.list("SOUND");
+		while(_g < _g1.length) {
+			var id = _g1[_g];
+			++_g;
+			if(openfl_Assets.exists(id,"SOUND") || openfl_Assets.exists(id,"MUSIC")) {
+				openfl_Assets.getSound(id,true);
+			} else {
+				var _this = flixel_FlxG.log;
+			}
+		}
+	}
+	,play: function(EmbeddedSound,Volume,Looped,Group,AutoDestroy,OnComplete) {
+		if(AutoDestroy == null) {
+			AutoDestroy = true;
+		}
+		if(Looped == null) {
+			Looped = false;
+		}
+		if(Volume == null) {
+			Volume = 1;
+		}
+		if(typeof(EmbeddedSound) == "string") {
+			if(openfl_Assets.exists(EmbeddedSound,"SOUND") || openfl_Assets.exists(EmbeddedSound,"MUSIC")) {
+				EmbeddedSound = openfl_Assets.getSound(EmbeddedSound,true);
+			} else {
+				var _this = flixel_FlxG.log;
+				EmbeddedSound = null;
+			}
+		}
+		var sound = this.list.recycle(flixel_system_FlxSound).loadEmbedded(EmbeddedSound,Looped,AutoDestroy,OnComplete);
+		sound.set_volume(Volume);
+		sound.set_group(Group == null ? this.defaultSoundGroup : Group);
+		return sound.play();
+	}
+	,stream: function(URL,Volume,Looped,Group,AutoDestroy,OnComplete) {
+		if(AutoDestroy == null) {
+			AutoDestroy = true;
+		}
+		if(Looped == null) {
+			Looped = false;
+		}
+		if(Volume == null) {
+			Volume = 1;
+		}
+		return this.load(null,Volume,Looped,null,AutoDestroy,true,URL,OnComplete);
+	}
+	,pause: function() {
+		if(this.music != null && this.music.exists && this.music.active) {
+			this.music.pause();
+		}
+		var _g = 0;
+		var _g1 = this.list.members;
+		while(_g < _g1.length) {
+			var sound = _g1[_g];
+			++_g;
+			if(sound != null && sound.exists && sound.active) {
+				sound.pause();
+			}
+		}
+	}
+	,resume: function() {
+		if(this.music != null && this.music.exists) {
+			this.music.resume();
+		}
+		var _g = 0;
+		var _g1 = this.list.members;
+		while(_g < _g1.length) {
+			var sound = _g1[_g];
+			++_g;
+			if(sound != null && sound.exists) {
+				sound.resume();
+			}
+		}
+	}
+	,destroy: function(ForceDestroy) {
+		if(ForceDestroy == null) {
+			ForceDestroy = false;
+		}
+		if(this.music != null && (ForceDestroy || !this.music.persist)) {
+			this.music.destroy();
+			this.music = null;
+		}
+		var _g = 0;
+		var _g1 = this.list.members;
+		while(_g < _g1.length) {
+			var sound = _g1[_g];
+			++_g;
+			if(sound != null && (ForceDestroy || !sound.persist)) {
+				sound.destroy();
+			}
+		}
+	}
+	,toggleMuted: function() {
+		this.muted = !this.muted;
+		if(this.volumeHandler != null) {
+			this.volumeHandler(this.muted ? 0 : this.volume);
+		}
+		this.showSoundTray();
+	}
+	,changeVolume: function(Amount) {
+		this.muted = false;
+		var _g = this;
+		_g.set_volume(_g.volume + Amount);
+		this.showSoundTray();
+	}
+	,showSoundTray: function() {
+	}
+	,update: function(elapsed) {
+		if(this.music != null && this.music.active) {
+			this.music.update(elapsed);
+		}
+		if(this.list != null && this.list.active) {
+			this.list.update(elapsed);
+		}
+		if(flixel_FlxG.keys.checkKeyArrayState(this.muteKeys,-1)) {
+			this.toggleMuted();
+		} else if(flixel_FlxG.keys.checkKeyArrayState(this.volumeUpKeys,-1)) {
+			this.changeVolume(0.1);
+		} else if(flixel_FlxG.keys.checkKeyArrayState(this.volumeDownKeys,-1)) {
+			this.changeVolume(-0.1);
+		}
+	}
+	,onFocusLost: function() {
+		if(this.music != null) {
+			this.music.onFocusLost();
+		}
+		var _g = 0;
+		var _g1 = this.list.members;
+		while(_g < _g1.length) {
+			var sound = _g1[_g];
+			++_g;
+			if(sound != null) {
+				sound.onFocusLost();
+			}
+		}
+	}
+	,onFocus: function() {
+		if(this.music != null) {
+			this.music.onFocus();
+		}
+		var _g = 0;
+		var _g1 = this.list.members;
+		while(_g < _g1.length) {
+			var sound = _g1[_g];
+			++_g;
+			if(sound != null) {
+				sound.onFocus();
+			}
+		}
+	}
+	,loadSavedPrefs: function() {
+		if(flixel_FlxG.save.data.volume != null) {
+			this.set_volume(flixel_FlxG.save.data.volume);
+		}
+		if(flixel_FlxG.save.data.mute != null) {
+			this.muted = flixel_FlxG.save.data.mute;
+		}
+	}
+	,set_volume: function(Volume) {
+		var lowerBound = Volume < 0 ? 0 : Volume;
+		if(lowerBound > 1) {
+			Volume = 1;
+		} else {
+			Volume = lowerBound;
+		}
+		if(this.volumeHandler != null) {
+			var param = this.muted ? 0 : Volume;
+			this.volumeHandler(param);
+		}
+		return this.volume = Volume;
+	}
+	,__class__: flixel_system_frontEnds_SoundFrontEnd
+	,__properties__: {set_volume:"set_volume"}
 };
 var flixel_system_frontEnds_VCRFrontEnd = function() {
 	this.stepRequested = false;
@@ -28372,6 +28551,9 @@ flixel_ui_FlxTypedButton_$flixel_$text_$FlxText.prototype = $extend(flixel_FlxSp
 		if(_this.callback != null) {
 			_this.callback();
 		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
+		}
 	}
 	,onDownHandler: function() {
 		this.set_status(2);
@@ -28380,12 +28562,18 @@ flixel_ui_FlxTypedButton_$flixel_$text_$FlxText.prototype = $extend(flixel_FlxSp
 		if(_this.callback != null) {
 			_this.callback();
 		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
+		}
 	}
 	,onOverHandler: function() {
 		this.set_status(1);
 		var _this = this.onOver;
 		if(_this.callback != null) {
 			_this.callback();
+		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
 		}
 	}
 	,onOutHandler: function() {
@@ -28394,6 +28582,9 @@ flixel_ui_FlxTypedButton_$flixel_$text_$FlxText.prototype = $extend(flixel_FlxSp
 		var _this = this.onOut;
 		if(_this.callback != null) {
 			_this.callback();
+		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
 		}
 	}
 	,set_label: function(Value) {
@@ -28737,6 +28928,9 @@ flixel_ui_FlxTypedButton.prototype = $extend(flixel_FlxSprite.prototype,{
 		if(_this.callback != null) {
 			_this.callback();
 		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
+		}
 	}
 	,onDownHandler: function() {
 		this.set_status(2);
@@ -28745,12 +28939,18 @@ flixel_ui_FlxTypedButton.prototype = $extend(flixel_FlxSprite.prototype,{
 		if(_this.callback != null) {
 			_this.callback();
 		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
+		}
 	}
 	,onOverHandler: function() {
 		this.set_status(1);
 		var _this = this.onOver;
 		if(_this.callback != null) {
 			_this.callback();
+		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
 		}
 	}
 	,onOutHandler: function() {
@@ -28759,6 +28959,9 @@ flixel_ui_FlxTypedButton.prototype = $extend(flixel_FlxSprite.prototype,{
 		var _this = this.onOut;
 		if(_this.callback != null) {
 			_this.callback();
+		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
 		}
 	}
 	,set_label: function(Value) {
@@ -28818,6 +29021,7 @@ flixel_ui_FlxTypedButton.prototype = $extend(flixel_FlxSprite.prototype,{
 });
 var flixel_ui__$FlxButton_FlxButtonEvent = function(Callback,sound) {
 	this.callback = Callback;
+	this.sound = sound;
 };
 $hxClasses["flixel.ui._FlxButton.FlxButtonEvent"] = flixel_ui__$FlxButton_FlxButtonEvent;
 flixel_ui__$FlxButton_FlxButtonEvent.__name__ = ["flixel","ui","_FlxButton","FlxButtonEvent"];
@@ -28825,10 +29029,14 @@ flixel_ui__$FlxButton_FlxButtonEvent.__interfaces__ = [flixel_util_IFlxDestroyab
 flixel_ui__$FlxButton_FlxButtonEvent.prototype = {
 	destroy: function() {
 		this.callback = null;
+		this.sound = flixel_util_FlxDestroyUtil.destroy(this.sound);
 	}
 	,fire: function() {
 		if(this.callback != null) {
 			this.callback();
+		}
+		if(this.sound != null) {
+			this.sound.play(true);
 		}
 	}
 	,__class__: flixel_ui__$FlxButton_FlxButtonEvent
@@ -72532,13 +72740,19 @@ openfl_display_DisplayObject.__instanceCount = 0;
 openfl_display_DisplayObject.__worldRenderDirty = 0;
 openfl_display_DisplayObject.__worldTransformDirty = 0;
 openfl_display_DisplayObject.__cacheAsBitmapMode = false;
+AssetPaths.AtaqueBueno__ogg = "assets/AtaqueBueno.ogg";
+AssetPaths.AtaqueMalo__ogg = "assets/AtaqueMalo.ogg";
 AssetPaths.Boss__png = "assets/Boss.png";
 AssetPaths.btnjugar__png = "assets/btnjugar.png";
 AssetPaths.btnpropuestas__png = "assets/btnpropuestas.png";
 AssetPaths.btnvolverajugar__png = "assets/btnvolverajugar.png";
+AssetPaths.cancion__ogg = "assets/cancion.ogg";
 AssetPaths.corazon__png = "assets/corazon.png";
+AssetPaths.derrota__ogg = "assets/derrota.ogg";
+AssetPaths.DerrotaSonido__ogg = "assets/DerrotaSonido.ogg";
 AssetPaths.eli__png = "assets/eli.png";
 AssetPaths.fondo__png = "assets/fondo.png";
+AssetPaths.inicio__ogg = "assets/inicio.ogg";
 AssetPaths.itai__png = "assets/itai.png";
 AssetPaths.lilita__png = "assets/lilita.png";
 AssetPaths.logo_ABA01__png = "assets/logo_ABA01.png";
@@ -72551,6 +72765,10 @@ AssetPaths.placas_juego_14__png = "assets/placas_juego-14.png";
 AssetPaths.placas_juego_14b__png = "assets/placas_juego-14b.png";
 AssetPaths.placas_juego_menu__png = "assets/placas_juego-menu.png";
 AssetPaths.placas_juego_nada__png = "assets/placas_juego-nada.png";
+AssetPaths.seleccionador__png = "assets/seleccionador.png";
+AssetPaths.Select__ogg = "assets/Select.ogg";
+AssetPaths.victoria__ogg = "assets/victoria.ogg";
+AssetPaths.VictoriaSonido__ogg = "assets/VictoriaSonido.ogg";
 openfl_text_Font.__registeredFonts = [];
 flixel_math_FlxRect._pool = new flixel_util_FlxPool_$flixel_$math_$FlxRect(flixel_math_FlxRect);
 flixel_FlxObject.defaultPixelPerfectPosition = false;
