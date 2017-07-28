@@ -122,7 +122,7 @@ ApplicationMain.init = function() {
 	}
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "395", company : "HaxeFlixel", file : "FlxProject", fps : 60, name : "FlxProject", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "FlxProject", vsync : true, width : 960, x : null, y : null}]};
+	ApplicationMain.config = { build : "404", company : "HaxeFlixel", file : "FlxProject", fps : 60, name : "FlxProject", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "FlxProject", vsync : true, width : 960, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	var hasMain = false;
@@ -6074,25 +6074,25 @@ MenuState.prototype = $extend(flixel_FlxState.prototype,{
 			var x = flixel_FlxG.mouse.x;
 			var y = flixel_FlxG.mouse.y;
 			if(flixel_FlxG.mouse._leftButton.current == 2) {
-				if(x > 41 && x < 425 && y > 188 && y < 576) {
+				if(x > 41 && x < 425 && y > 103 && y < 473) {
 					flixel_FlxG.sound.play("assets/Select.ogg");
 					this.p = "itai";
 					this.aux = false;
 				}
-				if(x > 536 && x < 920 && y > 188 && y < 576) {
+				if(x > 536 && x < 920 && y > 103 && y < 473) {
 					flixel_FlxG.sound.play("assets/Select.ogg");
 					this.p = "eli";
 					this.aux = false;
 				}
 			} else {
 				this.img5.set_visible(false);
-				if(x > 41 && x < 425 && y > 120 && y < 506) {
+				if(x > 41 && x < 425 && y > 103 && y < 473) {
 					this.img5.set_visible(true);
-					this.img5.setPosition(41,120);
+					this.img5.setPosition(41,103);
 				}
-				if(x > 536 && x < 920 && y > 120 && y < 506) {
+				if(x > 536 && x < 920 && y > 103 && y < 473) {
 					this.img5.set_visible(true);
-					this.img5.setPosition(536,120);
+					this.img5.setPosition(536,103);
 				}
 			}
 			if(!this.aux) {
