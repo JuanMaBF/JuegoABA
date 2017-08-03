@@ -30,6 +30,8 @@ ApplicationMain.create = function() {
 	types.push("SOUND");
 	urls.push("assets/Boss.png");
 	types.push("IMAGE");
+	urls.push("assets/btnatacar.png");
+	types.push("IMAGE");
 	urls.push("assets/btnjugar.png");
 	types.push("IMAGE");
 	urls.push("assets/btnpropuestas.png");
@@ -45,6 +47,8 @@ ApplicationMain.create = function() {
 	urls.push("assets/DerrotaSonido.ogg");
 	types.push("SOUND");
 	urls.push("assets/eli.png");
+	types.push("IMAGE");
+	urls.push("assets/flecha.png");
 	types.push("IMAGE");
 	urls.push("assets/fondo.png");
 	types.push("IMAGE");
@@ -122,7 +126,7 @@ ApplicationMain.init = function() {
 	}
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "404", company : "HaxeFlixel", file : "FlxProject", fps : 60, name : "FlxProject", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "FlxProject", vsync : true, width : 960, x : null, y : null}]};
+	ApplicationMain.config = { build : "447", company : "HaxeFlixel", file : "FlxProject", fps : 60, name : "FlxProject", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "FlxProject", vsync : true, width : 960, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	var hasMain = false;
@@ -2090,949 +2094,6 @@ DocumentClass.prototype = $extend(Main.prototype,{
 var AssetPaths = function() { };
 $hxClasses["AssetPaths"] = AssetPaths;
 AssetPaths.__name__ = ["AssetPaths"];
-var lime_AssetLibrary = function() {
-	this.onChange = new lime_app_Event_$Void_$Void();
-};
-$hxClasses["lime.AssetLibrary"] = lime_AssetLibrary;
-lime_AssetLibrary.__name__ = ["lime","AssetLibrary"];
-lime_AssetLibrary.prototype = {
-	exists: function(id,type) {
-		return false;
-	}
-	,getAudioBuffer: function(id) {
-		return null;
-	}
-	,getBytes: function(id) {
-		return null;
-	}
-	,getFont: function(id) {
-		return null;
-	}
-	,getImage: function(id) {
-		return null;
-	}
-	,getPath: function(id) {
-		return null;
-	}
-	,getText: function(id) {
-		var bytes = this.getBytes(id);
-		if(bytes == null) {
-			return null;
-		} else {
-			return bytes.getString(0,bytes.length);
-		}
-	}
-	,isLocal: function(id,type) {
-		return true;
-	}
-	,list: function(type) {
-		return null;
-	}
-	,load: function() {
-		var _gthis = this;
-		return new lime_app_Future(function() {
-			return _gthis;
-		});
-	}
-	,loadAudioBuffer: function(id) {
-		var _gthis = this;
-		return new lime_app_Future(function() {
-			return _gthis.getAudioBuffer(id);
-		});
-	}
-	,loadBytes: function(id) {
-		var _gthis = this;
-		return new lime_app_Future(function() {
-			return _gthis.getBytes(id);
-		});
-	}
-	,loadFont: function(id) {
-		var _gthis = this;
-		return new lime_app_Future(function() {
-			return _gthis.getFont(id);
-		});
-	}
-	,loadImage: function(id) {
-		var _gthis = this;
-		return new lime_app_Future(function() {
-			return _gthis.getImage(id);
-		});
-	}
-	,loadText: function(id) {
-		return this.loadBytes(id).then(function(bytes) {
-			return new lime_app_Future(function() {
-				if(bytes == null) {
-					return null;
-				} else {
-					return bytes.getString(0,bytes.length);
-				}
-			});
-		});
-	}
-	,unload: function() {
-	}
-	,__class__: lime_AssetLibrary
-};
-var DefaultAssetLibrary = function() {
-	this.type = new haxe_ds_StringMap();
-	this.path = new haxe_ds_StringMap();
-	this.className = new haxe_ds_StringMap();
-	lime_AssetLibrary.call(this);
-	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf);
-	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf);
-	var id = "assets/AtaqueBueno.ogg";
-	var _this = this.path;
-	if(__map_reserved[id] != null) {
-		_this.setReserved(id,id);
-	} else {
-		_this.h[id] = id;
-	}
-	var _this1 = this.type;
-	var value = "SOUND";
-	if(__map_reserved[id] != null) {
-		_this1.setReserved(id,value);
-	} else {
-		_this1.h[id] = value;
-	}
-	id = "assets/AtaqueMalo.ogg";
-	var _this2 = this.path;
-	if(__map_reserved[id] != null) {
-		_this2.setReserved(id,id);
-	} else {
-		_this2.h[id] = id;
-	}
-	var _this3 = this.type;
-	var value1 = "SOUND";
-	if(__map_reserved[id] != null) {
-		_this3.setReserved(id,value1);
-	} else {
-		_this3.h[id] = value1;
-	}
-	id = "assets/Boss.png";
-	var _this4 = this.path;
-	if(__map_reserved[id] != null) {
-		_this4.setReserved(id,id);
-	} else {
-		_this4.h[id] = id;
-	}
-	var _this5 = this.type;
-	var value2 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this5.setReserved(id,value2);
-	} else {
-		_this5.h[id] = value2;
-	}
-	id = "assets/btnjugar.png";
-	var _this6 = this.path;
-	if(__map_reserved[id] != null) {
-		_this6.setReserved(id,id);
-	} else {
-		_this6.h[id] = id;
-	}
-	var _this7 = this.type;
-	var value3 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this7.setReserved(id,value3);
-	} else {
-		_this7.h[id] = value3;
-	}
-	id = "assets/btnpropuestas.png";
-	var _this8 = this.path;
-	if(__map_reserved[id] != null) {
-		_this8.setReserved(id,id);
-	} else {
-		_this8.h[id] = id;
-	}
-	var _this9 = this.type;
-	var value4 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this9.setReserved(id,value4);
-	} else {
-		_this9.h[id] = value4;
-	}
-	id = "assets/btnvolverajugar.png";
-	var _this10 = this.path;
-	if(__map_reserved[id] != null) {
-		_this10.setReserved(id,id);
-	} else {
-		_this10.h[id] = id;
-	}
-	var _this11 = this.type;
-	var value5 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this11.setReserved(id,value5);
-	} else {
-		_this11.h[id] = value5;
-	}
-	id = "assets/cancion.ogg";
-	var _this12 = this.path;
-	if(__map_reserved[id] != null) {
-		_this12.setReserved(id,id);
-	} else {
-		_this12.h[id] = id;
-	}
-	var _this13 = this.type;
-	var value6 = "MUSIC";
-	if(__map_reserved[id] != null) {
-		_this13.setReserved(id,value6);
-	} else {
-		_this13.h[id] = value6;
-	}
-	id = "assets/corazon.png";
-	var _this14 = this.path;
-	if(__map_reserved[id] != null) {
-		_this14.setReserved(id,id);
-	} else {
-		_this14.h[id] = id;
-	}
-	var _this15 = this.type;
-	var value7 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this15.setReserved(id,value7);
-	} else {
-		_this15.h[id] = value7;
-	}
-	id = "assets/derrota.ogg";
-	var _this16 = this.path;
-	if(__map_reserved[id] != null) {
-		_this16.setReserved(id,id);
-	} else {
-		_this16.h[id] = id;
-	}
-	var _this17 = this.type;
-	var value8 = "SOUND";
-	if(__map_reserved[id] != null) {
-		_this17.setReserved(id,value8);
-	} else {
-		_this17.h[id] = value8;
-	}
-	id = "assets/DerrotaSonido.ogg";
-	var _this18 = this.path;
-	if(__map_reserved[id] != null) {
-		_this18.setReserved(id,id);
-	} else {
-		_this18.h[id] = id;
-	}
-	var _this19 = this.type;
-	var value9 = "SOUND";
-	if(__map_reserved[id] != null) {
-		_this19.setReserved(id,value9);
-	} else {
-		_this19.h[id] = value9;
-	}
-	id = "assets/eli.png";
-	var _this20 = this.path;
-	if(__map_reserved[id] != null) {
-		_this20.setReserved(id,id);
-	} else {
-		_this20.h[id] = id;
-	}
-	var _this21 = this.type;
-	var value10 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this21.setReserved(id,value10);
-	} else {
-		_this21.h[id] = value10;
-	}
-	id = "assets/fondo.png";
-	var _this22 = this.path;
-	if(__map_reserved[id] != null) {
-		_this22.setReserved(id,id);
-	} else {
-		_this22.h[id] = id;
-	}
-	var _this23 = this.type;
-	var value11 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this23.setReserved(id,value11);
-	} else {
-		_this23.h[id] = value11;
-	}
-	id = "assets/inicio.ogg";
-	var _this24 = this.path;
-	if(__map_reserved[id] != null) {
-		_this24.setReserved(id,id);
-	} else {
-		_this24.h[id] = id;
-	}
-	var _this25 = this.type;
-	var value12 = "MUSIC";
-	if(__map_reserved[id] != null) {
-		_this25.setReserved(id,value12);
-	} else {
-		_this25.h[id] = value12;
-	}
-	id = "assets/itai.png";
-	var _this26 = this.path;
-	if(__map_reserved[id] != null) {
-		_this26.setReserved(id,id);
-	} else {
-		_this26.h[id] = id;
-	}
-	var _this27 = this.type;
-	var value13 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this27.setReserved(id,value13);
-	} else {
-		_this27.h[id] = value13;
-	}
-	id = "assets/lilita.png";
-	var _this28 = this.path;
-	if(__map_reserved[id] != null) {
-		_this28.setReserved(id,id);
-	} else {
-		_this28.h[id] = id;
-	}
-	var _this29 = this.type;
-	var value14 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this29.setReserved(id,value14);
-	} else {
-		_this29.h[id] = value14;
-	}
-	id = "assets/logo_ABA01.png";
-	var _this30 = this.path;
-	if(__map_reserved[id] != null) {
-		_this30.setReserved(id,id);
-	} else {
-		_this30.h[id] = id;
-	}
-	var _this31 = this.type;
-	var value15 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this31.setReserved(id,value15);
-	} else {
-		_this31.h[id] = value15;
-	}
-	id = "assets/lousteau.png";
-	var _this32 = this.path;
-	if(__map_reserved[id] != null) {
-		_this32.setReserved(id,id);
-	} else {
-		_this32.h[id] = id;
-	}
-	var _this33 = this.type;
-	var value16 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this33.setReserved(id,value16);
-	} else {
-		_this33.h[id] = value16;
-	}
-	id = "assets/piso.png";
-	var _this34 = this.path;
-	if(__map_reserved[id] != null) {
-		_this34.setReserved(id,id);
-	} else {
-		_this34.h[id] = id;
-	}
-	var _this35 = this.type;
-	var value17 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this35.setReserved(id,value17);
-	} else {
-		_this35.h[id] = value17;
-	}
-	id = "assets/placas_juego-01.png";
-	var _this36 = this.path;
-	if(__map_reserved[id] != null) {
-		_this36.setReserved(id,id);
-	} else {
-		_this36.h[id] = id;
-	}
-	var _this37 = this.type;
-	var value18 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this37.setReserved(id,value18);
-	} else {
-		_this37.h[id] = value18;
-	}
-	id = "assets/placas_juego-06.png";
-	var _this38 = this.path;
-	if(__map_reserved[id] != null) {
-		_this38.setReserved(id,id);
-	} else {
-		_this38.h[id] = id;
-	}
-	var _this39 = this.type;
-	var value19 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this39.setReserved(id,value19);
-	} else {
-		_this39.h[id] = value19;
-	}
-	id = "assets/placas_juego-09.png";
-	var _this40 = this.path;
-	if(__map_reserved[id] != null) {
-		_this40.setReserved(id,id);
-	} else {
-		_this40.h[id] = id;
-	}
-	var _this41 = this.type;
-	var value20 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this41.setReserved(id,value20);
-	} else {
-		_this41.h[id] = value20;
-	}
-	id = "assets/placas_juego-14.png";
-	var _this42 = this.path;
-	if(__map_reserved[id] != null) {
-		_this42.setReserved(id,id);
-	} else {
-		_this42.h[id] = id;
-	}
-	var _this43 = this.type;
-	var value21 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this43.setReserved(id,value21);
-	} else {
-		_this43.h[id] = value21;
-	}
-	id = "assets/placas_juego-14b.png";
-	var _this44 = this.path;
-	if(__map_reserved[id] != null) {
-		_this44.setReserved(id,id);
-	} else {
-		_this44.h[id] = id;
-	}
-	var _this45 = this.type;
-	var value22 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this45.setReserved(id,value22);
-	} else {
-		_this45.h[id] = value22;
-	}
-	id = "assets/placas_juego-menu.png";
-	var _this46 = this.path;
-	if(__map_reserved[id] != null) {
-		_this46.setReserved(id,id);
-	} else {
-		_this46.h[id] = id;
-	}
-	var _this47 = this.type;
-	var value23 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this47.setReserved(id,value23);
-	} else {
-		_this47.h[id] = value23;
-	}
-	id = "assets/placas_juego-nada.png";
-	var _this48 = this.path;
-	if(__map_reserved[id] != null) {
-		_this48.setReserved(id,id);
-	} else {
-		_this48.h[id] = id;
-	}
-	var _this49 = this.type;
-	var value24 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this49.setReserved(id,value24);
-	} else {
-		_this49.h[id] = value24;
-	}
-	id = "assets/seleccionador.png";
-	var _this50 = this.path;
-	if(__map_reserved[id] != null) {
-		_this50.setReserved(id,id);
-	} else {
-		_this50.h[id] = id;
-	}
-	var _this51 = this.type;
-	var value25 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this51.setReserved(id,value25);
-	} else {
-		_this51.h[id] = value25;
-	}
-	id = "assets/Select.ogg";
-	var _this52 = this.path;
-	if(__map_reserved[id] != null) {
-		_this52.setReserved(id,id);
-	} else {
-		_this52.h[id] = id;
-	}
-	var _this53 = this.type;
-	var value26 = "SOUND";
-	if(__map_reserved[id] != null) {
-		_this53.setReserved(id,value26);
-	} else {
-		_this53.h[id] = value26;
-	}
-	id = "assets/victoria.ogg";
-	var _this54 = this.path;
-	if(__map_reserved[id] != null) {
-		_this54.setReserved(id,id);
-	} else {
-		_this54.h[id] = id;
-	}
-	var _this55 = this.type;
-	var value27 = "SOUND";
-	if(__map_reserved[id] != null) {
-		_this55.setReserved(id,value27);
-	} else {
-		_this55.h[id] = value27;
-	}
-	id = "assets/VictoriaSonido.ogg";
-	var _this56 = this.path;
-	if(__map_reserved[id] != null) {
-		_this56.setReserved(id,id);
-	} else {
-		_this56.h[id] = id;
-	}
-	var _this57 = this.type;
-	var value28 = "SOUND";
-	if(__map_reserved[id] != null) {
-		_this57.setReserved(id,value28);
-	} else {
-		_this57.h[id] = value28;
-	}
-	id = "flixel/sounds/beep.ogg";
-	var _this58 = this.path;
-	if(__map_reserved[id] != null) {
-		_this58.setReserved(id,id);
-	} else {
-		_this58.h[id] = id;
-	}
-	var _this59 = this.type;
-	var value29 = "SOUND";
-	if(__map_reserved[id] != null) {
-		_this59.setReserved(id,value29);
-	} else {
-		_this59.h[id] = value29;
-	}
-	id = "flixel/sounds/flixel.ogg";
-	var _this60 = this.path;
-	if(__map_reserved[id] != null) {
-		_this60.setReserved(id,id);
-	} else {
-		_this60.h[id] = id;
-	}
-	var _this61 = this.type;
-	var value30 = "SOUND";
-	if(__map_reserved[id] != null) {
-		_this61.setReserved(id,value30);
-	} else {
-		_this61.h[id] = value30;
-	}
-	id = "flixel/fonts/nokiafc22.ttf";
-	var _this62 = this.className;
-	var value31 = _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf;
-	if(__map_reserved[id] != null) {
-		_this62.setReserved(id,value31);
-	} else {
-		_this62.h[id] = value31;
-	}
-	var _this63 = this.type;
-	var value32 = "FONT";
-	if(__map_reserved[id] != null) {
-		_this63.setReserved(id,value32);
-	} else {
-		_this63.h[id] = value32;
-	}
-	id = "flixel/fonts/monsterrat.ttf";
-	var _this64 = this.className;
-	var value33 = _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf;
-	if(__map_reserved[id] != null) {
-		_this64.setReserved(id,value33);
-	} else {
-		_this64.h[id] = value33;
-	}
-	var _this65 = this.type;
-	var value34 = "FONT";
-	if(__map_reserved[id] != null) {
-		_this65.setReserved(id,value34);
-	} else {
-		_this65.h[id] = value34;
-	}
-	id = "flixel/images/ui/button.png";
-	var _this66 = this.path;
-	if(__map_reserved[id] != null) {
-		_this66.setReserved(id,id);
-	} else {
-		_this66.h[id] = id;
-	}
-	var _this67 = this.type;
-	var value35 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this67.setReserved(id,value35);
-	} else {
-		_this67.h[id] = value35;
-	}
-	id = "flixel/images/logo/default.png";
-	var _this68 = this.path;
-	if(__map_reserved[id] != null) {
-		_this68.setReserved(id,id);
-	} else {
-		_this68.h[id] = id;
-	}
-	var _this69 = this.type;
-	var value36 = "IMAGE";
-	if(__map_reserved[id] != null) {
-		_this69.setReserved(id,value36);
-	} else {
-		_this69.h[id] = value36;
-	}
-	var assetsPrefix = null;
-	if(ApplicationMain.config != null && Object.prototype.hasOwnProperty.call(ApplicationMain.config,"assetsPrefix")) {
-		assetsPrefix = ApplicationMain.config.assetsPrefix;
-	}
-	if(assetsPrefix != null) {
-		var k = this.path.keys();
-		while(k.hasNext()) {
-			var k1 = k.next();
-			var this1 = this.path;
-			var _this70 = this.path;
-			var value37 = assetsPrefix + (__map_reserved[k1] != null ? _this70.getReserved(k1) : _this70.h[k1]);
-			var _this71 = this1;
-			if(__map_reserved[k1] != null) {
-				_this71.setReserved(k1,value37);
-			} else {
-				_this71.h[k1] = value37;
-			}
-		}
-	}
-};
-$hxClasses["DefaultAssetLibrary"] = DefaultAssetLibrary;
-DefaultAssetLibrary.__name__ = ["DefaultAssetLibrary"];
-DefaultAssetLibrary.__super__ = lime_AssetLibrary;
-DefaultAssetLibrary.prototype = $extend(lime_AssetLibrary.prototype,{
-	exists: function(id,type) {
-		var requestedType = type != null ? js_Boot.__cast(type , String) : null;
-		var _this = this.type;
-		var assetType = __map_reserved[id] != null ? _this.getReserved(id) : _this.h[id];
-		if(assetType != null) {
-			if(assetType == requestedType || (requestedType == "SOUND" || requestedType == "MUSIC") && (assetType == "MUSIC" || assetType == "SOUND")) {
-				return true;
-			}
-			if(requestedType == "BINARY" || requestedType == null || assetType == "BINARY" && requestedType == "TEXT") {
-				return true;
-			}
-		}
-		return false;
-	}
-	,getAudioBuffer: function(id) {
-		return null;
-	}
-	,getBytes: function(id) {
-		var this1 = lime_app_Preloader.loaders;
-		var _this = this.path;
-		var key = __map_reserved[id] != null ? _this.getReserved(id) : _this.h[id];
-		var _this1 = this1;
-		var loader = __map_reserved[key] != null ? _this1.getReserved(key) : _this1.h[key];
-		if(loader == null) {
-			return null;
-		}
-		var bytes = loader.bytes;
-		if(bytes != null) {
-			return bytes;
-		} else {
-			return null;
-		}
-	}
-	,getFont: function(id) {
-		var _this = this.className;
-		return js_Boot.__cast(Type.createInstance(__map_reserved[id] != null ? _this.getReserved(id) : _this.h[id],[]) , lime_text_Font);
-	}
-	,getImage: function(id) {
-		var this1 = lime_app_Preloader.images;
-		var _this = this.path;
-		var key = __map_reserved[id] != null ? _this.getReserved(id) : _this.h[id];
-		var _this1 = this1;
-		return lime_graphics_Image.fromImageElement(__map_reserved[key] != null ? _this1.getReserved(key) : _this1.h[key]);
-	}
-	,getPath: function(id) {
-		var _this = this.path;
-		if(__map_reserved[id] != null) {
-			return _this.getReserved(id);
-		} else {
-			return _this.h[id];
-		}
-	}
-	,getText: function(id) {
-		var this1 = lime_app_Preloader.loaders;
-		var _this = this.path;
-		var key = __map_reserved[id] != null ? _this.getReserved(id) : _this.h[id];
-		var _this1 = this1;
-		var loader = __map_reserved[key] != null ? _this1.getReserved(key) : _this1.h[key];
-		if(loader == null) {
-			return null;
-		}
-		var bytes = loader.bytes;
-		if(bytes != null) {
-			return bytes.getString(0,bytes.length);
-		} else {
-			return null;
-		}
-	}
-	,isLocal: function(id,type) {
-		var requestedType = type != null ? js_Boot.__cast(type , String) : null;
-		return true;
-	}
-	,list: function(type) {
-		var requestedType = type != null ? js_Boot.__cast(type , String) : null;
-		var items = [];
-		var id = this.type.keys();
-		while(id.hasNext()) {
-			var id1 = id.next();
-			if(requestedType == null || this.exists(id1,type)) {
-				items.push(id1);
-			}
-		}
-		return items;
-	}
-	,loadAudioBuffer: function(id) {
-		var _gthis = this;
-		var promise = new lime_app_Promise();
-		promise.completeWith(new lime_app_Future(function() {
-			return _gthis.getAudioBuffer(id);
-		}));
-		return promise.future;
-	}
-	,loadBytes: function(id) {
-		var promise = new lime_app_Promise();
-		var _this = this.path;
-		if(__map_reserved[id] != null ? _this.existsReserved(id) : _this.h.hasOwnProperty(id)) {
-			var request = new lime_net_HTTPRequest();
-			var _this1 = this.path;
-			promise.completeWith(request.load((__map_reserved[id] != null ? _this1.getReserved(id) : _this1.h[id]) + "?" + lime_Assets.cache.version));
-		} else {
-			promise.complete(this.getBytes(id));
-		}
-		return promise.future;
-	}
-	,loadImage: function(id) {
-		var promise = new lime_app_Promise();
-		var _this = this.path;
-		if(__map_reserved[id] != null ? _this.existsReserved(id) : _this.h.hasOwnProperty(id)) {
-			var image = new Image();
-			image.onload = function(_) {
-				var tmp = lime_graphics_Image.fromImageElement(image);
-				promise.complete(tmp);
-			};
-			image.onerror = $bind(promise,promise.error);
-			var _this1 = this.path;
-			var tmp1 = __map_reserved[id] != null ? _this1.getReserved(id) : _this1.h[id];
-			image.src = tmp1 + "?" + lime_Assets.cache.version;
-		} else {
-			var tmp2 = this.getImage(id);
-			promise.complete(tmp2);
-		}
-		return promise.future;
-	}
-	,loadText: function(id) {
-		var promise = new lime_app_Promise();
-		var _this = this.path;
-		if(__map_reserved[id] != null ? _this.existsReserved(id) : _this.h.hasOwnProperty(id)) {
-			var request = new lime_net_HTTPRequest();
-			var _this1 = this.path;
-			var future = request.load((__map_reserved[id] != null ? _this1.getReserved(id) : _this1.h[id]) + "?" + lime_Assets.cache.version);
-			future.onProgress(function(progress) {
-				promise.progress(progress);
-			});
-			future.onError(function(msg) {
-				promise.error(msg);
-			});
-			future.onComplete(function(bytes) {
-				var tmp = bytes.getString(0,bytes.length);
-				promise.complete(tmp);
-			});
-		} else {
-			var tmp1 = this.getText(id);
-			promise.complete(tmp1);
-		}
-		return promise.future;
-	}
-	,__class__: DefaultAssetLibrary
-});
-var lime_text_Font = function(name) {
-	if(name != null) {
-		this.name = name;
-	}
-	if(this.__fontPath != null) {
-		this.__fromFile(this.__fontPath);
-	}
-};
-$hxClasses["lime.text.Font"] = lime_text_Font;
-lime_text_Font.__name__ = ["lime","text","Font"];
-lime_text_Font.fromBytes = function(bytes) {
-	var font = new lime_text_Font();
-	font.__fromBytes(bytes);
-	return font;
-};
-lime_text_Font.fromFile = function(path) {
-	var font = new lime_text_Font();
-	font.__fromFile(path);
-	return font;
-};
-lime_text_Font.prototype = {
-	decompose: function() {
-		return null;
-	}
-	,getGlyph: function(character) {
-		return -1;
-	}
-	,getGlyphs: function(characters) {
-		if(characters == null) {
-			characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^`'\"/\\&*()[]{}<>|:;_-+=?,. ";
-		}
-		return null;
-	}
-	,getGlyphMetrics: function(glyph) {
-		return null;
-	}
-	,renderGlyph: function(glyph,fontSize) {
-		return null;
-	}
-	,renderGlyphs: function(glyphs,fontSize) {
-		return null;
-	}
-	,__fromBytes: function(bytes) {
-		this.__fontPath = null;
-	}
-	,__fromFile: function(path) {
-		this.__fontPath = path;
-	}
-	,__setSize: function(size) {
-	}
-	,get_ascender: function() {
-		return 0;
-	}
-	,get_descender: function() {
-		return 0;
-	}
-	,get_height: function() {
-		return 0;
-	}
-	,get_numGlyphs: function() {
-		return 0;
-	}
-	,get_underlinePosition: function() {
-		return 0;
-	}
-	,get_underlineThickness: function() {
-		return 0;
-	}
-	,get_unitsPerEM: function() {
-		return 0;
-	}
-	,__class__: lime_text_Font
-	,__properties__: {get_unitsPerEM:"get_unitsPerEM",get_underlineThickness:"get_underlineThickness",get_underlinePosition:"get_underlinePosition",get_numGlyphs:"get_numGlyphs",get_height:"get_height",get_descender:"get_descender",get_ascender:"get_ascender"}
-};
-var _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf = function() {
-	lime_text_Font.call(this);
-	this.name = "Nokia Cellphone FC Small";
-};
-$hxClasses["__ASSET__flixel_fonts_nokiafc22_ttf"] = _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf;
-_$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf.__name__ = ["__ASSET__flixel_fonts_nokiafc22_ttf"];
-_$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf.__super__ = lime_text_Font;
-_$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf.prototype = $extend(lime_text_Font.prototype,{
-	__class__: _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf
-});
-var _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf = function() {
-	lime_text_Font.call(this);
-	this.name = "Monsterrat";
-};
-$hxClasses["__ASSET__flixel_fonts_monsterrat_ttf"] = _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf;
-_$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf.__name__ = ["__ASSET__flixel_fonts_monsterrat_ttf"];
-_$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf.__super__ = lime_text_Font;
-_$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf.prototype = $extend(lime_text_Font.prototype,{
-	__class__: _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf
-});
-var openfl_text_Font = function(name) {
-	lime_text_Font.call(this,name);
-};
-$hxClasses["openfl.text.Font"] = openfl_text_Font;
-openfl_text_Font.__name__ = ["openfl","text","Font"];
-openfl_text_Font.enumerateFonts = function(enumerateDeviceFonts) {
-	if(enumerateDeviceFonts == null) {
-		enumerateDeviceFonts = false;
-	}
-	return openfl_text_Font.__registeredFonts;
-};
-openfl_text_Font.fromBytes = function(bytes) {
-	var font = new openfl_text_Font();
-	font.__fromBytes(openfl_utils__$ByteArray_ByteArray_$Impl_$.toBytes(bytes));
-	return font;
-};
-openfl_text_Font.fromFile = function(path) {
-	var font = new openfl_text_Font();
-	font.__fromFile(path);
-	return font;
-};
-openfl_text_Font.registerFont = function(font) {
-	var instance = js_Boot.__cast(Type.createInstance(font,[]) , openfl_text_Font);
-	if(instance != null) {
-		openfl_text_Font.__registeredFonts.push(instance);
-	}
-};
-openfl_text_Font.__fromLimeFont = function(value) {
-	var font = new openfl_text_Font();
-	font.name = value.name;
-	font.src = value.src;
-	return font;
-};
-openfl_text_Font.__super__ = lime_text_Font;
-openfl_text_Font.prototype = $extend(lime_text_Font.prototype,{
-	get_fontName: function() {
-		return this.name;
-	}
-	,set_fontName: function(value) {
-		return this.name = value;
-	}
-	,__class__: openfl_text_Font
-	,__properties__: $extend(lime_text_Font.prototype.__properties__,{set_fontName:"set_fontName",get_fontName:"get_fontName"})
-});
-var _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf = function() {
-	var font = new _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf();
-	this.src = font.src;
-	this.name = font.name;
-	openfl_text_Font.call(this);
-};
-$hxClasses["__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf"] = _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf;
-_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf.__name__ = ["__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf"];
-_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf.__super__ = openfl_text_Font;
-_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf.prototype = $extend(openfl_text_Font.prototype,{
-	__class__: _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf
-});
-var _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf = function() {
-	var font = new _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf();
-	this.src = font.src;
-	this.name = font.name;
-	openfl_text_Font.call(this);
-};
-$hxClasses["__ASSET__OPENFL__flixel_fonts_monsterrat_ttf"] = _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf;
-_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf.__name__ = ["__ASSET__OPENFL__flixel_fonts_monsterrat_ttf"];
-_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf.__super__ = openfl_text_Font;
-_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf.prototype = $extend(openfl_text_Font.prototype,{
-	__class__: _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf
-});
-var EReg = function(r,opt) {
-	this.r = new RegExp(r,opt.split("u").join(""));
-};
-$hxClasses["EReg"] = EReg;
-EReg.__name__ = ["EReg"];
-EReg.prototype = {
-	match: function(s) {
-		if(this.r.global) {
-			this.r.lastIndex = 0;
-		}
-		this.r.m = this.r.exec(s);
-		this.r.s = s;
-		return this.r.m != null;
-	}
-	,matched: function(n) {
-		if(this.r.m != null && n >= 0 && n < this.r.m.length) {
-			return this.r.m[n];
-		} else {
-			throw new js__$Boot_HaxeError("EReg::matched");
-		}
-	}
-	,split: function(s) {
-		var d = "#__delim__#";
-		return s.replace(this.r,d).split(d);
-	}
-	,__class__: EReg
-};
 var flixel_util_IFlxDestroyable = function() { };
 $hxClasses["flixel.util.IFlxDestroyable"] = flixel_util_IFlxDestroyable;
 flixel_util_IFlxDestroyable.__name__ = ["flixel","util","IFlxDestroyable"];
@@ -3126,604 +2187,6 @@ flixel_FlxBasic.prototype = {
 	,__class__: flixel_FlxBasic
 	,__properties__: {set_cameras:"set_cameras",get_cameras:"get_cameras",set_camera:"set_camera",get_camera:"get_camera",set_exists:"set_exists",set_alive:"set_alive",set_visible:"set_visible",set_active:"set_active"}
 };
-var flixel_group_FlxTypedGroup = function(MaxSize) {
-	if(MaxSize == null) {
-		MaxSize = 0;
-	}
-	this._marker = 0;
-	this.length = 0;
-	flixel_FlxBasic.call(this);
-	this.members = [];
-	this.set_maxSize(Math.abs(MaxSize) | 0);
-	this.flixelType = 2;
-};
-$hxClasses["flixel.group.FlxTypedGroup"] = flixel_group_FlxTypedGroup;
-flixel_group_FlxTypedGroup.__name__ = ["flixel","group","FlxTypedGroup"];
-flixel_group_FlxTypedGroup.overlaps = function(Callback,Group,X,Y,InScreenSpace,Camera) {
-	var result = false;
-	if(Group != null) {
-		var i = 0;
-		var l = Group.length;
-		var basic;
-		while(i < l) {
-			basic = Group.members[i++];
-			if(basic != null && Callback(basic,X,Y,InScreenSpace,Camera)) {
-				result = true;
-				break;
-			}
-		}
-	}
-	return result;
-};
-flixel_group_FlxTypedGroup.resolveGroup = function(ObjectOrGroup) {
-	var group = null;
-	if(ObjectOrGroup != null) {
-		if(ObjectOrGroup.flixelType == 2) {
-			group = ObjectOrGroup;
-		} else if(ObjectOrGroup.flixelType == 4) {
-			var spriteGroup = ObjectOrGroup;
-			group = spriteGroup.group;
-		}
-	}
-	return group;
-};
-flixel_group_FlxTypedGroup.__super__ = flixel_FlxBasic;
-flixel_group_FlxTypedGroup.prototype = $extend(flixel_FlxBasic.prototype,{
-	destroy: function() {
-		flixel_FlxBasic.prototype.destroy.call(this);
-		if(this.members != null) {
-			var i = 0;
-			var basic = null;
-			while(i < this.length) {
-				basic = this.members[i++];
-				if(basic != null) {
-					basic.destroy();
-				}
-			}
-			this.members = null;
-		}
-	}
-	,update: function(elapsed) {
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null && basic.exists && basic.active) {
-				basic.update(elapsed);
-			}
-		}
-	}
-	,draw: function() {
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null && basic.exists && basic.visible) {
-				basic.draw();
-			}
-		}
-	}
-	,add: function(Object) {
-		if(Object == null) {
-			var _this = flixel_FlxG.log;
-			return null;
-		}
-		if(this.members.indexOf(Object) >= 0) {
-			return Object;
-		}
-		var index = this.getFirstNull();
-		if(index != -1) {
-			this.members[index] = Object;
-			if(index >= this.length) {
-				this.length = index + 1;
-			}
-			return Object;
-		}
-		if(this.maxSize > 0 && this.length >= this.maxSize) {
-			return Object;
-		}
-		this.members.push(Object);
-		this.length++;
-		return Object;
-	}
-	,insert: function(position,object) {
-		if(object == null) {
-			var _this = flixel_FlxG.log;
-			return null;
-		}
-		if(this.members.indexOf(object) >= 0) {
-			return object;
-		}
-		if(position < this.length && this.members[position] == null) {
-			this.members[position] = object;
-			return object;
-		}
-		if(this.maxSize > 0 && this.length >= this.maxSize) {
-			return object;
-		}
-		this.members.splice(position,0,object);
-		this.length++;
-		return object;
-	}
-	,recycle: function(ObjectClass,ObjectFactory,Force,Revive) {
-		if(Revive == null) {
-			Revive = true;
-		}
-		if(Force == null) {
-			Force = false;
-		}
-		var basic = null;
-		if(this.maxSize > 0) {
-			if(this.length < this.maxSize) {
-				var object = null;
-				if(ObjectFactory != null) {
-					object = ObjectFactory();
-					this.add(object);
-				} else if(ObjectClass != null) {
-					object = Type.createInstance(ObjectClass,[]);
-					this.add(object);
-				}
-				return object;
-			} else {
-				basic = this.members[this._marker++];
-				if(this._marker >= this.maxSize) {
-					this._marker = 0;
-				}
-				if(Revive) {
-					basic.revive();
-				}
-				return basic;
-			}
-		} else {
-			basic = this.getFirstAvailable(ObjectClass,Force);
-			if(basic != null) {
-				if(Revive) {
-					basic.revive();
-				}
-				return basic;
-			}
-			var object1 = null;
-			if(ObjectFactory != null) {
-				object1 = ObjectFactory();
-				this.add(object1);
-			} else if(ObjectClass != null) {
-				object1 = Type.createInstance(ObjectClass,[]);
-				this.add(object1);
-			}
-			return object1;
-		}
-	}
-	,recycleCreateObject: function(ObjectClass,ObjectFactory) {
-		var object = null;
-		if(ObjectFactory != null) {
-			object = ObjectFactory();
-			this.add(object);
-		} else if(ObjectClass != null) {
-			object = Type.createInstance(ObjectClass,[]);
-			this.add(object);
-		}
-		return object;
-	}
-	,remove: function(Object,Splice) {
-		if(Splice == null) {
-			Splice = false;
-		}
-		if(this.members == null) {
-			return null;
-		}
-		var index = this.members.indexOf(Object);
-		if(index < 0) {
-			return null;
-		}
-		if(Splice) {
-			this.members.splice(index,1);
-		} else {
-			this.members[index] = null;
-		}
-		return Object;
-	}
-	,replace: function(OldObject,NewObject) {
-		var index = this.members.indexOf(OldObject);
-		if(index < 0) {
-			return null;
-		}
-		this.members[index] = NewObject;
-		return NewObject;
-	}
-	,sort: function(Function,Order) {
-		if(Order == null) {
-			Order = -1;
-		}
-		var f = Function;
-		var a1 = Order;
-		var tmp = function(a2,a3) {
-			return f(a1,a2,a3);
-		};
-		this.members.sort(tmp);
-	}
-	,getFirstAvailable: function(ObjectClass,Force) {
-		if(Force == null) {
-			Force = false;
-		}
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null && !basic.exists && (ObjectClass == null || js_Boot.__instanceof(basic,ObjectClass))) {
-				if(Force && Type.getClassName(basic == null ? null : js_Boot.getClass(basic)) != Type.getClassName(ObjectClass)) {
-					continue;
-				}
-				return this.members[i - 1];
-			}
-		}
-		return null;
-	}
-	,getFirstNull: function() {
-		var i = 0;
-		while(i < this.length) {
-			if(this.members[i] == null) {
-				return i;
-			}
-			++i;
-		}
-		return -1;
-	}
-	,getFirstExisting: function() {
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null && basic.exists) {
-				return basic;
-			}
-		}
-		return null;
-	}
-	,getFirstAlive: function() {
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null && basic.exists && basic.alive) {
-				return basic;
-			}
-		}
-		return null;
-	}
-	,getFirstDead: function() {
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null && !basic.alive) {
-				return basic;
-			}
-		}
-		return null;
-	}
-	,countLiving: function() {
-		var i = 0;
-		var count = -1;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null) {
-				if(count < 0) {
-					count = 0;
-				}
-				if(basic.exists && basic.alive) {
-					++count;
-				}
-			}
-		}
-		return count;
-	}
-	,countDead: function() {
-		var i = 0;
-		var count = -1;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null) {
-				if(count < 0) {
-					count = 0;
-				}
-				if(!basic.alive) {
-					++count;
-				}
-			}
-		}
-		return count;
-	}
-	,getRandom: function(StartIndex,Length) {
-		if(Length == null) {
-			Length = 0;
-		}
-		if(StartIndex == null) {
-			StartIndex = 0;
-		}
-		if(StartIndex < 0) {
-			StartIndex = 0;
-		}
-		if(Length <= 0) {
-			Length = this.length;
-		}
-		return flixel_FlxG.random.getObject_flixel_group_FlxTypedGroup_T(this.members,null,StartIndex,Length);
-	}
-	,clear: function() {
-		this.length = 0;
-		flixel_util_FlxArrayUtil.clearArray(this.members);
-	}
-	,kill: function() {
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null && basic.exists) {
-				basic.kill();
-			}
-		}
-		flixel_FlxBasic.prototype.kill.call(this);
-	}
-	,revive: function() {
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null && !basic.exists) {
-				basic.revive();
-			}
-		}
-		flixel_FlxBasic.prototype.revive.call(this);
-	}
-	,iterator: function(filter) {
-		return new flixel_group_FlxTypedGroupIterator(this.members,filter);
-	}
-	,forEach: function(Function,Recurse) {
-		if(Recurse == null) {
-			Recurse = false;
-		}
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null) {
-				if(Recurse) {
-					var group = flixel_group_FlxTypedGroup.resolveGroup(basic);
-					if(group != null) {
-						group.forEach(Function,Recurse);
-					}
-				}
-				Function(basic);
-			}
-		}
-	}
-	,forEachAlive: function(Function,Recurse) {
-		if(Recurse == null) {
-			Recurse = false;
-		}
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null && basic.exists && basic.alive) {
-				if(Recurse) {
-					var group = flixel_group_FlxTypedGroup.resolveGroup(basic);
-					if(group != null) {
-						group.forEachAlive(Function,Recurse);
-					}
-				}
-				Function(basic);
-			}
-		}
-	}
-	,forEachDead: function(Function,Recurse) {
-		if(Recurse == null) {
-			Recurse = false;
-		}
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null && !basic.alive) {
-				if(Recurse) {
-					var group = flixel_group_FlxTypedGroup.resolveGroup(basic);
-					if(group != null) {
-						group.forEachDead(Function,Recurse);
-					}
-				}
-				Function(basic);
-			}
-		}
-	}
-	,forEachExists: function(Function,Recurse) {
-		if(Recurse == null) {
-			Recurse = false;
-		}
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null && basic.exists) {
-				if(Recurse) {
-					var group = flixel_group_FlxTypedGroup.resolveGroup(basic);
-					if(group != null) {
-						group.forEachExists(Function,Recurse);
-					}
-				}
-				Function(basic);
-			}
-		}
-	}
-	,forEachOfType: function(ObjectClass,Function,Recurse) {
-		if(Recurse == null) {
-			Recurse = false;
-		}
-		var i = 0;
-		var basic = null;
-		while(i < this.length) {
-			basic = this.members[i++];
-			if(basic != null) {
-				if(Recurse) {
-					var group = flixel_group_FlxTypedGroup.resolveGroup(basic);
-					if(group != null) {
-						group.forEachOfType(ObjectClass,Function,Recurse);
-					}
-				}
-				if(js_Boot.__instanceof(basic,ObjectClass)) {
-					Function(basic);
-				}
-			}
-		}
-	}
-	,set_maxSize: function(Size) {
-		this.maxSize = Math.abs(Size) | 0;
-		if(this._marker >= this.maxSize) {
-			this._marker = 0;
-		}
-		if(this.maxSize == 0 || this.members == null || this.maxSize >= this.length) {
-			return this.maxSize;
-		}
-		var i = this.maxSize;
-		var l = this.length;
-		var basic = null;
-		while(i < l) {
-			basic = this.members[i++];
-			if(basic != null) {
-				basic.destroy();
-			}
-		}
-		flixel_util_FlxArrayUtil.setLength_flixel_group_FlxTypedGroup_T(this.members,this.maxSize);
-		this.length = this.members.length;
-		return this.maxSize;
-	}
-	,__class__: flixel_group_FlxTypedGroup
-	,__properties__: $extend(flixel_FlxBasic.prototype.__properties__,{set_maxSize:"set_maxSize"})
-});
-var flixel_FlxState = function(MaxSize) {
-	this._requestSubStateReset = false;
-	this.destroySubStates = true;
-	this.persistentDraw = true;
-	this.persistentUpdate = false;
-	flixel_group_FlxTypedGroup.call(this,MaxSize);
-};
-$hxClasses["flixel.FlxState"] = flixel_FlxState;
-flixel_FlxState.__name__ = ["flixel","FlxState"];
-flixel_FlxState.__super__ = flixel_group_FlxTypedGroup;
-flixel_FlxState.prototype = $extend(flixel_group_FlxTypedGroup.prototype,{
-	create: function() {
-	}
-	,draw: function() {
-		if(this.persistentDraw || this.subState == null) {
-			flixel_group_FlxTypedGroup.prototype.draw.call(this);
-		}
-		if(this.subState != null) {
-			this.subState.draw();
-		}
-	}
-	,openSubState: function(SubState) {
-		this._requestSubStateReset = true;
-		this._requestedSubState = SubState;
-	}
-	,closeSubState: function() {
-		this._requestSubStateReset = true;
-	}
-	,resetSubState: function() {
-		if(this.subState != null) {
-			if(this.subState.closeCallback != null) {
-				this.subState.closeCallback();
-			}
-			if(this.destroySubStates) {
-				this.subState.destroy();
-			}
-		}
-		this.subState = this._requestedSubState;
-		this._requestedSubState = null;
-		if(this.subState != null) {
-			if(!this.persistentUpdate) {
-				flixel_FlxG.inputs.onStateSwitch();
-			}
-			this.subState._parentState = this;
-			if(!this.subState._created) {
-				this.subState._created = true;
-				this.subState.create();
-			}
-		}
-	}
-	,destroy: function() {
-		if(this.subState != null) {
-			this.subState.destroy();
-			this.subState = null;
-		}
-		flixel_group_FlxTypedGroup.prototype.destroy.call(this);
-	}
-	,switchTo: function(nextState) {
-		return true;
-	}
-	,onFocusLost: function() {
-	}
-	,onFocus: function() {
-	}
-	,onResize: function(Width,Height) {
-	}
-	,tryUpdate: function(elapsed) {
-		if(this.persistentUpdate || this.subState == null) {
-			this.update(elapsed);
-		}
-		if(this._requestSubStateReset) {
-			this._requestSubStateReset = false;
-			this.resetSubState();
-		} else if(this.subState != null) {
-			this.subState.tryUpdate(elapsed);
-		}
-	}
-	,get_bgColor: function() {
-		return flixel_FlxG.cameras.get_bgColor();
-	}
-	,set_bgColor: function(Value) {
-		return flixel_FlxG.cameras.set_bgColor(Value);
-	}
-	,__class__: flixel_FlxState
-	,__properties__: $extend(flixel_group_FlxTypedGroup.prototype.__properties__,{set_bgColor:"set_bgColor",get_bgColor:"get_bgColor"})
-});
-var EndState = function(MaxSize) {
-	flixel_FlxState.call(this,MaxSize);
-};
-$hxClasses["EndState"] = EndState;
-EndState.__name__ = ["EndState"];
-EndState.__super__ = flixel_FlxState;
-EndState.prototype = $extend(flixel_FlxState.prototype,{
-	create: function() {
-		flixel_FlxState.prototype.create.call(this);
-		var _this = flixel_FlxG.sound.music;
-		_this.cleanup(_this.autoDestroy,true);
-		var spr = new flixel_FlxSprite(0,0);
-		if(PlayState.txtP == "Victoria") {
-			flixel_FlxG.sound.play("assets/VictoriaSonido.ogg");
-			flixel_FlxG.sound.playMusic("assets/victoria.ogg");
-			spr.loadGraphic("assets/placas_juego-09.png");
-		} else if(PlayState.txtP == "Derrota") {
-			flixel_FlxG.sound.play("assets/DerrotaSonido.ogg");
-			flixel_FlxG.sound.playMusic("assets/derrota.ogg");
-			spr.loadGraphic("assets/placas_juego-14.png");
-		}
-		this.add(spr);
-		var btn = new flixel_ui_FlxButton(0,0,"",$bind(this,this.reiniciar));
-		btn.loadGraphic("assets/btnvolverajugar.png",true,80,20);
-		this.add(btn);
-		btn.setGraphicSize(240,60);
-		btn.updateHitbox();
-		btn.setPosition(flixel_FlxG.width / 2 - btn.get_width() / 2,flixel_FlxG.height / 2);
-	}
-	,reiniciar: function() {
-		flixel_FlxG.sound.play("assets/Select.ogg");
-		var nextState = new MenuState();
-		if(flixel_FlxG.game._state.switchTo(nextState)) {
-			flixel_FlxG.game._requestedState = nextState;
-		}
-	}
-	,__class__: EndState
-});
 var flixel_util_IFlxPooled = function() { };
 $hxClasses["flixel.util.IFlxPooled"] = flixel_util_IFlxPooled;
 flixel_util_IFlxPooled.__name__ = ["flixel","util","IFlxPooled"];
@@ -5790,6 +4253,1974 @@ flixel_FlxSprite.prototype = $extend(flixel_FlxObject.prototype,{
 	,__class__: flixel_FlxSprite
 	,__properties__: $extend(flixel_FlxObject.prototype.__properties__,{set_clipRect:"set_clipRect",set_color:"set_color",set_blend:"set_blend",set_flipY:"set_flipY",set_flipX:"set_flipX",set_facing:"set_facing",set_alpha:"set_alpha",set_graphic:"set_graphic",set_frames:"set_frames",set_frame:"set_frame",set_pixels:"set_pixels",get_pixels:"get_pixels",set_antialiasing:"set_antialiasing",set_useFramePixels:"set_useFramePixels"})
 });
+var flixel_input_IFlxInput = function() { };
+$hxClasses["flixel.input.IFlxInput"] = flixel_input_IFlxInput;
+flixel_input_IFlxInput.__name__ = ["flixel","input","IFlxInput"];
+flixel_input_IFlxInput.prototype = {
+	__class__: flixel_input_IFlxInput
+	,__properties__: {get_justPressed:"get_justPressed",get_pressed:"get_pressed",get_released:"get_released",get_justReleased:"get_justReleased"}
+};
+var flixel_ui_FlxTypedButton_$flixel_$FlxSprite = function(X,Y,OnClick) {
+	if(Y == null) {
+		Y = 0;
+	}
+	if(X == null) {
+		X = 0;
+	}
+	this.lastStatus = -1;
+	this.maxInputMovement = Infinity;
+	this.mouseButtons = [-1];
+	this.allowSwiping = true;
+	this.statusAnimations = ["normal","highlight","pressed"];
+	this.labelAlphas = [0.8,1.0,0.5];
+	var point = flixel_math_FlxPoint._pool.get().set(0,0);
+	point._inPool = false;
+	var point1 = flixel_math_FlxPoint._pool.get().set(0,0);
+	point1._inPool = false;
+	var point2 = flixel_math_FlxPoint._pool.get().set(0,1);
+	point2._inPool = false;
+	this.labelOffsets = [point,point1,point2];
+	flixel_FlxSprite.call(this,X,Y);
+	this.loadDefaultGraphic();
+	this.onUp = new flixel_ui__$FlxButton_FlxButtonEvent(OnClick);
+	this.onDown = new flixel_ui__$FlxButton_FlxButtonEvent();
+	this.onOver = new flixel_ui__$FlxButton_FlxButtonEvent();
+	this.onOut = new flixel_ui__$FlxButton_FlxButtonEvent();
+	this.set_status(0);
+	this.scrollFactor.set();
+	openfl_Lib.current.stage.addEventListener("mouseUp",$bind(this,this.onUpEventListener));
+	this.input = new flixel_input_FlxInput(0);
+};
+$hxClasses["flixel.ui.FlxTypedButton_flixel_FlxSprite"] = flixel_ui_FlxTypedButton_$flixel_$FlxSprite;
+flixel_ui_FlxTypedButton_$flixel_$FlxSprite.__name__ = ["flixel","ui","FlxTypedButton_flixel_FlxSprite"];
+flixel_ui_FlxTypedButton_$flixel_$FlxSprite.__interfaces__ = [flixel_input_IFlxInput];
+flixel_ui_FlxTypedButton_$flixel_$FlxSprite.__super__ = flixel_FlxSprite;
+flixel_ui_FlxTypedButton_$flixel_$FlxSprite.prototype = $extend(flixel_FlxSprite.prototype,{
+	graphicLoaded: function() {
+		flixel_FlxSprite.prototype.graphicLoaded.call(this);
+		this.setupAnimation("normal",0);
+		this.setupAnimation("highlight",1);
+		this.setupAnimation("pressed",2);
+	}
+	,loadDefaultGraphic: function() {
+		this.loadGraphic("flixel/images/ui/button.png",true,80,20);
+	}
+	,setupAnimation: function(animationName,frameIndex) {
+		frameIndex = Math.min(frameIndex,this.animation._sprite.numFrames - 1) | 0;
+		this.animation.add(animationName,[frameIndex]);
+	}
+	,destroy: function() {
+		this.set_label(flixel_util_FlxDestroyUtil.destroy(this.label));
+		this._spriteLabel = null;
+		this.onUp = flixel_util_FlxDestroyUtil.destroy(this.onUp);
+		this.onDown = flixel_util_FlxDestroyUtil.destroy(this.onDown);
+		this.onOver = flixel_util_FlxDestroyUtil.destroy(this.onOver);
+		this.onOut = flixel_util_FlxDestroyUtil.destroy(this.onOut);
+		this.labelOffsets = flixel_util_FlxDestroyUtil.putArray(this.labelOffsets);
+		this.labelAlphas = null;
+		this.currentInput = null;
+		this.input = null;
+		openfl_Lib.current.stage.removeEventListener("mouseUp",$bind(this,this.onUpEventListener));
+		flixel_FlxSprite.prototype.destroy.call(this);
+	}
+	,update: function(elapsed) {
+		flixel_FlxSprite.prototype.update.call(this,elapsed);
+		this.input.update();
+		if(this.visible) {
+			this.updateButton();
+			if(this.lastStatus != this.status) {
+				this.updateStatusAnimation();
+				this.lastStatus = this.status;
+			}
+		}
+	}
+	,updateStatusAnimation: function() {
+		this.animation.play(this.statusAnimations[this.status]);
+	}
+	,draw: function() {
+		flixel_FlxSprite.prototype.draw.call(this);
+		if(this._spriteLabel != null && this._spriteLabel.visible) {
+			this._spriteLabel.set_cameras(this.get_cameras());
+			this._spriteLabel.draw();
+		}
+	}
+	,stampOnAtlas: function(atlas) {
+		var buttonNode = atlas.addNode(this.graphic.bitmap,this.graphic.key);
+		var result = buttonNode != null;
+		if(buttonNode != null) {
+			var buttonFrames = this.frames;
+			var X = buttonFrames.tileSize.x;
+			var Y = buttonFrames.tileSize.y;
+			var point = flixel_math_FlxPoint._pool.get().set(X,Y);
+			point._inPool = false;
+			var tileSize = point;
+			var tileFrames = buttonNode.getTileFrames(tileSize);
+			this.set_frames(tileFrames);
+		}
+		if(result && this.label != null) {
+			var labelNode = atlas.addNode(this.label.graphic.bitmap,this.label.graphic.key);
+			if(result) {
+				result = labelNode != null;
+			} else {
+				result = false;
+			}
+			if(labelNode != null) {
+				this.label.set_frames(labelNode.getImageFrame());
+			}
+		}
+		return result;
+	}
+	,updateButton: function() {
+		var overlapFound = this.checkMouseOverlap();
+		if(!overlapFound) {
+			overlapFound = this.checkTouchOverlap();
+		}
+		if(this.currentInput != null && this.currentInput.get_justReleased() && js_Boot.__instanceof(this.currentInput,flixel_input_touch_FlxTouch) && overlapFound) {
+			this.onUpHandler();
+		}
+		if(this.status != 0 && (!overlapFound || this.currentInput != null && this.currentInput.get_justReleased())) {
+			this.onOutHandler();
+		}
+	}
+	,checkMouseOverlap: function() {
+		var _g = 0;
+		var _g1 = this.get_cameras();
+		while(_g < _g1.length) {
+			var camera = _g1[_g];
+			++_g;
+			var _g2 = 0;
+			var _g3 = this.mouseButtons;
+			while(_g2 < _g3.length) {
+				var buttonID = _g3[_g2];
+				++_g2;
+				var button = flixel_input_mouse_FlxMouseButton.getByID(buttonID);
+				if(button != null && this.checkInput(flixel_FlxG.mouse,button,button.justPressedPosition,camera)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	,checkTouchOverlap: function() {
+		var _g = 0;
+		var _g1 = this.get_cameras();
+		while(_g < _g1.length) {
+			var camera = _g1[_g];
+			++_g;
+			var _g2 = 0;
+			var _g3 = flixel_FlxG.touches.list;
+			while(_g2 < _g3.length) {
+				var touch = _g3[_g2];
+				++_g2;
+				if(this.checkInput(touch,touch,touch.justPressedPosition,camera)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	,checkInput: function(pointer,input,justPressedPosition,camera) {
+		var tmp;
+		var tmp1;
+		if(this.maxInputMovement != Infinity) {
+			var point = flixel_math_FlxPoint._pool.get().set(0,0);
+			point._inPool = false;
+			var point1 = point;
+			point1._weak = true;
+			tmp1 = justPressedPosition.distanceTo(pointer.getScreenPosition(null,point1)) > this.maxInputMovement;
+		} else {
+			tmp1 = false;
+		}
+		if(tmp1) {
+			tmp = input == this.currentInput;
+		} else {
+			tmp = false;
+		}
+		if(!tmp) {
+			if(this.overlapsPoint(pointer.getWorldPosition(camera,this._point),true,camera)) {
+				this.updateStatus(input);
+				return true;
+			}
+		}
+		return false;
+	}
+	,updateStatus: function(input) {
+		if(input.get_justPressed()) {
+			this.currentInput = input;
+			this.onDownHandler();
+		} else if(this.status == 0) {
+			if(this.allowSwiping && input.get_pressed()) {
+				this.onDownHandler();
+			} else {
+				this.onOverHandler();
+			}
+		}
+	}
+	,updateLabelPosition: function() {
+		if(this._spriteLabel != null) {
+			this._spriteLabel.set_x((this.pixelPerfectPosition ? Math.floor(this.x) : this.x) + this.labelOffsets[this.status].x);
+			this._spriteLabel.set_y((this.pixelPerfectPosition ? Math.floor(this.y) : this.y) + this.labelOffsets[this.status].y);
+		}
+	}
+	,updateLabelAlpha: function() {
+		if(this._spriteLabel != null && this.labelAlphas.length > this.status) {
+			this._spriteLabel.set_alpha(this.alpha * this.labelAlphas[this.status]);
+		}
+	}
+	,onUpEventListener: function(_) {
+		if(this.visible && this.exists && this.active && this.status == 2) {
+			this.onUpHandler();
+		}
+	}
+	,onUpHandler: function() {
+		this.set_status(0);
+		this.input.release();
+		this.currentInput = null;
+		var _this = this.onUp;
+		if(_this.callback != null) {
+			_this.callback();
+		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
+		}
+	}
+	,onDownHandler: function() {
+		this.set_status(2);
+		this.input.press();
+		var _this = this.onDown;
+		if(_this.callback != null) {
+			_this.callback();
+		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
+		}
+	}
+	,onOverHandler: function() {
+		this.set_status(1);
+		var _this = this.onOver;
+		if(_this.callback != null) {
+			_this.callback();
+		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
+		}
+	}
+	,onOutHandler: function() {
+		this.set_status(0);
+		this.input.release();
+		var _this = this.onOut;
+		if(_this.callback != null) {
+			_this.callback();
+		}
+		if(_this.sound != null) {
+			_this.sound.play(true);
+		}
+	}
+	,set_label: function(Value) {
+		if(Value != null) {
+			Value.scrollFactor.put();
+			Value.scrollFactor = this.scrollFactor;
+		}
+		this.label = Value;
+		this._spriteLabel = this.label;
+		this.updateLabelPosition();
+		return Value;
+	}
+	,set_status: function(Value) {
+		this.status = Value;
+		this.updateLabelAlpha();
+		return this.status;
+	}
+	,set_alpha: function(Value) {
+		flixel_FlxSprite.prototype.set_alpha.call(this,Value);
+		this.updateLabelAlpha();
+		return this.alpha;
+	}
+	,set_x: function(Value) {
+		flixel_FlxSprite.prototype.set_x.call(this,Value);
+		this.updateLabelPosition();
+		return this.x;
+	}
+	,set_y: function(Value) {
+		flixel_FlxSprite.prototype.set_y.call(this,Value);
+		this.updateLabelPosition();
+		return this.y;
+	}
+	,get_justReleased: function() {
+		return this.input.current == -1;
+	}
+	,get_released: function() {
+		var _this = this.input;
+		if(_this.current != 0) {
+			return _this.current == -1;
+		} else {
+			return true;
+		}
+	}
+	,get_pressed: function() {
+		var _this = this.input;
+		if(_this.current != 1) {
+			return _this.current == 2;
+		} else {
+			return true;
+		}
+	}
+	,get_justPressed: function() {
+		return this.input.current == 2;
+	}
+	,__class__: flixel_ui_FlxTypedButton_$flixel_$FlxSprite
+	,__properties__: $extend(flixel_FlxSprite.prototype.__properties__,{get_justPressed:"get_justPressed",get_pressed:"get_pressed",get_released:"get_released",get_justReleased:"get_justReleased",set_status:"set_status",set_label:"set_label"})
+});
+var flixel_ui_FlxSpriteButton = function(X,Y,Label,OnClick) {
+	if(Y == null) {
+		Y = 0;
+	}
+	if(X == null) {
+		X = 0;
+	}
+	flixel_ui_FlxTypedButton_$flixel_$FlxSprite.call(this,X,Y,OnClick);
+	var _g = 0;
+	var _g1 = this.labelOffsets;
+	while(_g < _g1.length) {
+		var point = _g1[_g];
+		++_g;
+		point.set(point.x - 1,point.y + 4);
+	}
+	this.set_label(Label);
+};
+$hxClasses["flixel.ui.FlxSpriteButton"] = flixel_ui_FlxSpriteButton;
+flixel_ui_FlxSpriteButton.__name__ = ["flixel","ui","FlxSpriteButton"];
+flixel_ui_FlxSpriteButton.__interfaces__ = [flixel_input_IFlxInput];
+flixel_ui_FlxSpriteButton.__super__ = flixel_ui_FlxTypedButton_$flixel_$FlxSprite;
+flixel_ui_FlxSpriteButton.prototype = $extend(flixel_ui_FlxTypedButton_$flixel_$FlxSprite.prototype,{
+	createTextLabel: function(Text,font,size,color,align) {
+		if(align == null) {
+			align = "center";
+		}
+		if(color == null) {
+			color = 3355443;
+		}
+		if(size == null) {
+			size = 8;
+		}
+		if(Text != null) {
+			var text = new flixel_text_FlxText(0,0,this.frameWidth,Text);
+			text.setFormat(font,size,color,align);
+			text.set_alpha(this.labelAlphas[this.status]);
+			text.drawFrame(true);
+			var labelBitmap = text.graphic.bitmap.clone();
+			var labelKey = text.graphic.key;
+			text.destroy();
+			if(this.label == null) {
+				this.set_label(new flixel_FlxSprite());
+			}
+			var labelGraphic = flixel_FlxG.bitmap.add(labelBitmap,false,labelKey);
+			this.label.set_frames(flixel_graphics_frames_FlxImageFrame.fromGraphic(labelGraphic));
+		}
+		return this;
+	}
+	,__class__: flixel_ui_FlxSpriteButton
+});
+var Botones = function(X,Y,flecha,izq,p) {
+	if(Y == null) {
+		Y = 0;
+	}
+	if(X == null) {
+		X = 0;
+	}
+	flixel_ui_FlxSpriteButton.call(this,X,Y);
+	if(flecha) {
+		this.loadGraphic("assets/flecha.png",false);
+		this.updateHitbox();
+		this.set_alpha(0.6);
+	} else {
+		this.loadGraphic("assets/btnatacar.png",false);
+		this.updateHitbox();
+	}
+	if(izq) {
+		this.set_flipX(true);
+	}
+	this._x = p.x;
+	this.personaje = p;
+};
+$hxClasses["Botones"] = Botones;
+Botones.__name__ = ["Botones"];
+Botones.__super__ = flixel_ui_FlxSpriteButton;
+Botones.prototype = $extend(flixel_ui_FlxSpriteButton.prototype,{
+	update: function(elapsed) {
+		flixel_ui_FlxSpriteButton.prototype.update.call(this,elapsed);
+	}
+	,__class__: Botones
+});
+var lime_AssetLibrary = function() {
+	this.onChange = new lime_app_Event_$Void_$Void();
+};
+$hxClasses["lime.AssetLibrary"] = lime_AssetLibrary;
+lime_AssetLibrary.__name__ = ["lime","AssetLibrary"];
+lime_AssetLibrary.prototype = {
+	exists: function(id,type) {
+		return false;
+	}
+	,getAudioBuffer: function(id) {
+		return null;
+	}
+	,getBytes: function(id) {
+		return null;
+	}
+	,getFont: function(id) {
+		return null;
+	}
+	,getImage: function(id) {
+		return null;
+	}
+	,getPath: function(id) {
+		return null;
+	}
+	,getText: function(id) {
+		var bytes = this.getBytes(id);
+		if(bytes == null) {
+			return null;
+		} else {
+			return bytes.getString(0,bytes.length);
+		}
+	}
+	,isLocal: function(id,type) {
+		return true;
+	}
+	,list: function(type) {
+		return null;
+	}
+	,load: function() {
+		var _gthis = this;
+		return new lime_app_Future(function() {
+			return _gthis;
+		});
+	}
+	,loadAudioBuffer: function(id) {
+		var _gthis = this;
+		return new lime_app_Future(function() {
+			return _gthis.getAudioBuffer(id);
+		});
+	}
+	,loadBytes: function(id) {
+		var _gthis = this;
+		return new lime_app_Future(function() {
+			return _gthis.getBytes(id);
+		});
+	}
+	,loadFont: function(id) {
+		var _gthis = this;
+		return new lime_app_Future(function() {
+			return _gthis.getFont(id);
+		});
+	}
+	,loadImage: function(id) {
+		var _gthis = this;
+		return new lime_app_Future(function() {
+			return _gthis.getImage(id);
+		});
+	}
+	,loadText: function(id) {
+		return this.loadBytes(id).then(function(bytes) {
+			return new lime_app_Future(function() {
+				if(bytes == null) {
+					return null;
+				} else {
+					return bytes.getString(0,bytes.length);
+				}
+			});
+		});
+	}
+	,unload: function() {
+	}
+	,__class__: lime_AssetLibrary
+};
+var DefaultAssetLibrary = function() {
+	this.type = new haxe_ds_StringMap();
+	this.path = new haxe_ds_StringMap();
+	this.className = new haxe_ds_StringMap();
+	lime_AssetLibrary.call(this);
+	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf);
+	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf);
+	var id = "assets/AtaqueBueno.ogg";
+	var _this = this.path;
+	if(__map_reserved[id] != null) {
+		_this.setReserved(id,id);
+	} else {
+		_this.h[id] = id;
+	}
+	var _this1 = this.type;
+	var value = "SOUND";
+	if(__map_reserved[id] != null) {
+		_this1.setReserved(id,value);
+	} else {
+		_this1.h[id] = value;
+	}
+	id = "assets/AtaqueMalo.ogg";
+	var _this2 = this.path;
+	if(__map_reserved[id] != null) {
+		_this2.setReserved(id,id);
+	} else {
+		_this2.h[id] = id;
+	}
+	var _this3 = this.type;
+	var value1 = "SOUND";
+	if(__map_reserved[id] != null) {
+		_this3.setReserved(id,value1);
+	} else {
+		_this3.h[id] = value1;
+	}
+	id = "assets/Boss.png";
+	var _this4 = this.path;
+	if(__map_reserved[id] != null) {
+		_this4.setReserved(id,id);
+	} else {
+		_this4.h[id] = id;
+	}
+	var _this5 = this.type;
+	var value2 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this5.setReserved(id,value2);
+	} else {
+		_this5.h[id] = value2;
+	}
+	id = "assets/btnatacar.png";
+	var _this6 = this.path;
+	if(__map_reserved[id] != null) {
+		_this6.setReserved(id,id);
+	} else {
+		_this6.h[id] = id;
+	}
+	var _this7 = this.type;
+	var value3 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this7.setReserved(id,value3);
+	} else {
+		_this7.h[id] = value3;
+	}
+	id = "assets/btnjugar.png";
+	var _this8 = this.path;
+	if(__map_reserved[id] != null) {
+		_this8.setReserved(id,id);
+	} else {
+		_this8.h[id] = id;
+	}
+	var _this9 = this.type;
+	var value4 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this9.setReserved(id,value4);
+	} else {
+		_this9.h[id] = value4;
+	}
+	id = "assets/btnpropuestas.png";
+	var _this10 = this.path;
+	if(__map_reserved[id] != null) {
+		_this10.setReserved(id,id);
+	} else {
+		_this10.h[id] = id;
+	}
+	var _this11 = this.type;
+	var value5 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this11.setReserved(id,value5);
+	} else {
+		_this11.h[id] = value5;
+	}
+	id = "assets/btnvolverajugar.png";
+	var _this12 = this.path;
+	if(__map_reserved[id] != null) {
+		_this12.setReserved(id,id);
+	} else {
+		_this12.h[id] = id;
+	}
+	var _this13 = this.type;
+	var value6 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this13.setReserved(id,value6);
+	} else {
+		_this13.h[id] = value6;
+	}
+	id = "assets/cancion.ogg";
+	var _this14 = this.path;
+	if(__map_reserved[id] != null) {
+		_this14.setReserved(id,id);
+	} else {
+		_this14.h[id] = id;
+	}
+	var _this15 = this.type;
+	var value7 = "MUSIC";
+	if(__map_reserved[id] != null) {
+		_this15.setReserved(id,value7);
+	} else {
+		_this15.h[id] = value7;
+	}
+	id = "assets/corazon.png";
+	var _this16 = this.path;
+	if(__map_reserved[id] != null) {
+		_this16.setReserved(id,id);
+	} else {
+		_this16.h[id] = id;
+	}
+	var _this17 = this.type;
+	var value8 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this17.setReserved(id,value8);
+	} else {
+		_this17.h[id] = value8;
+	}
+	id = "assets/derrota.ogg";
+	var _this18 = this.path;
+	if(__map_reserved[id] != null) {
+		_this18.setReserved(id,id);
+	} else {
+		_this18.h[id] = id;
+	}
+	var _this19 = this.type;
+	var value9 = "SOUND";
+	if(__map_reserved[id] != null) {
+		_this19.setReserved(id,value9);
+	} else {
+		_this19.h[id] = value9;
+	}
+	id = "assets/DerrotaSonido.ogg";
+	var _this20 = this.path;
+	if(__map_reserved[id] != null) {
+		_this20.setReserved(id,id);
+	} else {
+		_this20.h[id] = id;
+	}
+	var _this21 = this.type;
+	var value10 = "SOUND";
+	if(__map_reserved[id] != null) {
+		_this21.setReserved(id,value10);
+	} else {
+		_this21.h[id] = value10;
+	}
+	id = "assets/eli.png";
+	var _this22 = this.path;
+	if(__map_reserved[id] != null) {
+		_this22.setReserved(id,id);
+	} else {
+		_this22.h[id] = id;
+	}
+	var _this23 = this.type;
+	var value11 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this23.setReserved(id,value11);
+	} else {
+		_this23.h[id] = value11;
+	}
+	id = "assets/flecha.png";
+	var _this24 = this.path;
+	if(__map_reserved[id] != null) {
+		_this24.setReserved(id,id);
+	} else {
+		_this24.h[id] = id;
+	}
+	var _this25 = this.type;
+	var value12 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this25.setReserved(id,value12);
+	} else {
+		_this25.h[id] = value12;
+	}
+	id = "assets/fondo.png";
+	var _this26 = this.path;
+	if(__map_reserved[id] != null) {
+		_this26.setReserved(id,id);
+	} else {
+		_this26.h[id] = id;
+	}
+	var _this27 = this.type;
+	var value13 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this27.setReserved(id,value13);
+	} else {
+		_this27.h[id] = value13;
+	}
+	id = "assets/inicio.ogg";
+	var _this28 = this.path;
+	if(__map_reserved[id] != null) {
+		_this28.setReserved(id,id);
+	} else {
+		_this28.h[id] = id;
+	}
+	var _this29 = this.type;
+	var value14 = "MUSIC";
+	if(__map_reserved[id] != null) {
+		_this29.setReserved(id,value14);
+	} else {
+		_this29.h[id] = value14;
+	}
+	id = "assets/itai.png";
+	var _this30 = this.path;
+	if(__map_reserved[id] != null) {
+		_this30.setReserved(id,id);
+	} else {
+		_this30.h[id] = id;
+	}
+	var _this31 = this.type;
+	var value15 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this31.setReserved(id,value15);
+	} else {
+		_this31.h[id] = value15;
+	}
+	id = "assets/lilita.png";
+	var _this32 = this.path;
+	if(__map_reserved[id] != null) {
+		_this32.setReserved(id,id);
+	} else {
+		_this32.h[id] = id;
+	}
+	var _this33 = this.type;
+	var value16 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this33.setReserved(id,value16);
+	} else {
+		_this33.h[id] = value16;
+	}
+	id = "assets/logo_ABA01.png";
+	var _this34 = this.path;
+	if(__map_reserved[id] != null) {
+		_this34.setReserved(id,id);
+	} else {
+		_this34.h[id] = id;
+	}
+	var _this35 = this.type;
+	var value17 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this35.setReserved(id,value17);
+	} else {
+		_this35.h[id] = value17;
+	}
+	id = "assets/lousteau.png";
+	var _this36 = this.path;
+	if(__map_reserved[id] != null) {
+		_this36.setReserved(id,id);
+	} else {
+		_this36.h[id] = id;
+	}
+	var _this37 = this.type;
+	var value18 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this37.setReserved(id,value18);
+	} else {
+		_this37.h[id] = value18;
+	}
+	id = "assets/piso.png";
+	var _this38 = this.path;
+	if(__map_reserved[id] != null) {
+		_this38.setReserved(id,id);
+	} else {
+		_this38.h[id] = id;
+	}
+	var _this39 = this.type;
+	var value19 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this39.setReserved(id,value19);
+	} else {
+		_this39.h[id] = value19;
+	}
+	id = "assets/placas_juego-01.png";
+	var _this40 = this.path;
+	if(__map_reserved[id] != null) {
+		_this40.setReserved(id,id);
+	} else {
+		_this40.h[id] = id;
+	}
+	var _this41 = this.type;
+	var value20 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this41.setReserved(id,value20);
+	} else {
+		_this41.h[id] = value20;
+	}
+	id = "assets/placas_juego-06.png";
+	var _this42 = this.path;
+	if(__map_reserved[id] != null) {
+		_this42.setReserved(id,id);
+	} else {
+		_this42.h[id] = id;
+	}
+	var _this43 = this.type;
+	var value21 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this43.setReserved(id,value21);
+	} else {
+		_this43.h[id] = value21;
+	}
+	id = "assets/placas_juego-09.png";
+	var _this44 = this.path;
+	if(__map_reserved[id] != null) {
+		_this44.setReserved(id,id);
+	} else {
+		_this44.h[id] = id;
+	}
+	var _this45 = this.type;
+	var value22 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this45.setReserved(id,value22);
+	} else {
+		_this45.h[id] = value22;
+	}
+	id = "assets/placas_juego-14.png";
+	var _this46 = this.path;
+	if(__map_reserved[id] != null) {
+		_this46.setReserved(id,id);
+	} else {
+		_this46.h[id] = id;
+	}
+	var _this47 = this.type;
+	var value23 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this47.setReserved(id,value23);
+	} else {
+		_this47.h[id] = value23;
+	}
+	id = "assets/placas_juego-14b.png";
+	var _this48 = this.path;
+	if(__map_reserved[id] != null) {
+		_this48.setReserved(id,id);
+	} else {
+		_this48.h[id] = id;
+	}
+	var _this49 = this.type;
+	var value24 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this49.setReserved(id,value24);
+	} else {
+		_this49.h[id] = value24;
+	}
+	id = "assets/placas_juego-menu.png";
+	var _this50 = this.path;
+	if(__map_reserved[id] != null) {
+		_this50.setReserved(id,id);
+	} else {
+		_this50.h[id] = id;
+	}
+	var _this51 = this.type;
+	var value25 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this51.setReserved(id,value25);
+	} else {
+		_this51.h[id] = value25;
+	}
+	id = "assets/placas_juego-nada.png";
+	var _this52 = this.path;
+	if(__map_reserved[id] != null) {
+		_this52.setReserved(id,id);
+	} else {
+		_this52.h[id] = id;
+	}
+	var _this53 = this.type;
+	var value26 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this53.setReserved(id,value26);
+	} else {
+		_this53.h[id] = value26;
+	}
+	id = "assets/seleccionador.png";
+	var _this54 = this.path;
+	if(__map_reserved[id] != null) {
+		_this54.setReserved(id,id);
+	} else {
+		_this54.h[id] = id;
+	}
+	var _this55 = this.type;
+	var value27 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this55.setReserved(id,value27);
+	} else {
+		_this55.h[id] = value27;
+	}
+	id = "assets/Select.ogg";
+	var _this56 = this.path;
+	if(__map_reserved[id] != null) {
+		_this56.setReserved(id,id);
+	} else {
+		_this56.h[id] = id;
+	}
+	var _this57 = this.type;
+	var value28 = "SOUND";
+	if(__map_reserved[id] != null) {
+		_this57.setReserved(id,value28);
+	} else {
+		_this57.h[id] = value28;
+	}
+	id = "assets/victoria.ogg";
+	var _this58 = this.path;
+	if(__map_reserved[id] != null) {
+		_this58.setReserved(id,id);
+	} else {
+		_this58.h[id] = id;
+	}
+	var _this59 = this.type;
+	var value29 = "SOUND";
+	if(__map_reserved[id] != null) {
+		_this59.setReserved(id,value29);
+	} else {
+		_this59.h[id] = value29;
+	}
+	id = "assets/VictoriaSonido.ogg";
+	var _this60 = this.path;
+	if(__map_reserved[id] != null) {
+		_this60.setReserved(id,id);
+	} else {
+		_this60.h[id] = id;
+	}
+	var _this61 = this.type;
+	var value30 = "SOUND";
+	if(__map_reserved[id] != null) {
+		_this61.setReserved(id,value30);
+	} else {
+		_this61.h[id] = value30;
+	}
+	id = "flixel/sounds/beep.ogg";
+	var _this62 = this.path;
+	if(__map_reserved[id] != null) {
+		_this62.setReserved(id,id);
+	} else {
+		_this62.h[id] = id;
+	}
+	var _this63 = this.type;
+	var value31 = "SOUND";
+	if(__map_reserved[id] != null) {
+		_this63.setReserved(id,value31);
+	} else {
+		_this63.h[id] = value31;
+	}
+	id = "flixel/sounds/flixel.ogg";
+	var _this64 = this.path;
+	if(__map_reserved[id] != null) {
+		_this64.setReserved(id,id);
+	} else {
+		_this64.h[id] = id;
+	}
+	var _this65 = this.type;
+	var value32 = "SOUND";
+	if(__map_reserved[id] != null) {
+		_this65.setReserved(id,value32);
+	} else {
+		_this65.h[id] = value32;
+	}
+	id = "flixel/fonts/nokiafc22.ttf";
+	var _this66 = this.className;
+	var value33 = _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf;
+	if(__map_reserved[id] != null) {
+		_this66.setReserved(id,value33);
+	} else {
+		_this66.h[id] = value33;
+	}
+	var _this67 = this.type;
+	var value34 = "FONT";
+	if(__map_reserved[id] != null) {
+		_this67.setReserved(id,value34);
+	} else {
+		_this67.h[id] = value34;
+	}
+	id = "flixel/fonts/monsterrat.ttf";
+	var _this68 = this.className;
+	var value35 = _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf;
+	if(__map_reserved[id] != null) {
+		_this68.setReserved(id,value35);
+	} else {
+		_this68.h[id] = value35;
+	}
+	var _this69 = this.type;
+	var value36 = "FONT";
+	if(__map_reserved[id] != null) {
+		_this69.setReserved(id,value36);
+	} else {
+		_this69.h[id] = value36;
+	}
+	id = "flixel/images/ui/button.png";
+	var _this70 = this.path;
+	if(__map_reserved[id] != null) {
+		_this70.setReserved(id,id);
+	} else {
+		_this70.h[id] = id;
+	}
+	var _this71 = this.type;
+	var value37 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this71.setReserved(id,value37);
+	} else {
+		_this71.h[id] = value37;
+	}
+	id = "flixel/images/logo/default.png";
+	var _this72 = this.path;
+	if(__map_reserved[id] != null) {
+		_this72.setReserved(id,id);
+	} else {
+		_this72.h[id] = id;
+	}
+	var _this73 = this.type;
+	var value38 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this73.setReserved(id,value38);
+	} else {
+		_this73.h[id] = value38;
+	}
+	var assetsPrefix = null;
+	if(ApplicationMain.config != null && Object.prototype.hasOwnProperty.call(ApplicationMain.config,"assetsPrefix")) {
+		assetsPrefix = ApplicationMain.config.assetsPrefix;
+	}
+	if(assetsPrefix != null) {
+		var k = this.path.keys();
+		while(k.hasNext()) {
+			var k1 = k.next();
+			var this1 = this.path;
+			var _this74 = this.path;
+			var value39 = assetsPrefix + (__map_reserved[k1] != null ? _this74.getReserved(k1) : _this74.h[k1]);
+			var _this75 = this1;
+			if(__map_reserved[k1] != null) {
+				_this75.setReserved(k1,value39);
+			} else {
+				_this75.h[k1] = value39;
+			}
+		}
+	}
+};
+$hxClasses["DefaultAssetLibrary"] = DefaultAssetLibrary;
+DefaultAssetLibrary.__name__ = ["DefaultAssetLibrary"];
+DefaultAssetLibrary.__super__ = lime_AssetLibrary;
+DefaultAssetLibrary.prototype = $extend(lime_AssetLibrary.prototype,{
+	exists: function(id,type) {
+		var requestedType = type != null ? js_Boot.__cast(type , String) : null;
+		var _this = this.type;
+		var assetType = __map_reserved[id] != null ? _this.getReserved(id) : _this.h[id];
+		if(assetType != null) {
+			if(assetType == requestedType || (requestedType == "SOUND" || requestedType == "MUSIC") && (assetType == "MUSIC" || assetType == "SOUND")) {
+				return true;
+			}
+			if(requestedType == "BINARY" || requestedType == null || assetType == "BINARY" && requestedType == "TEXT") {
+				return true;
+			}
+		}
+		return false;
+	}
+	,getAudioBuffer: function(id) {
+		return null;
+	}
+	,getBytes: function(id) {
+		var this1 = lime_app_Preloader.loaders;
+		var _this = this.path;
+		var key = __map_reserved[id] != null ? _this.getReserved(id) : _this.h[id];
+		var _this1 = this1;
+		var loader = __map_reserved[key] != null ? _this1.getReserved(key) : _this1.h[key];
+		if(loader == null) {
+			return null;
+		}
+		var bytes = loader.bytes;
+		if(bytes != null) {
+			return bytes;
+		} else {
+			return null;
+		}
+	}
+	,getFont: function(id) {
+		var _this = this.className;
+		return js_Boot.__cast(Type.createInstance(__map_reserved[id] != null ? _this.getReserved(id) : _this.h[id],[]) , lime_text_Font);
+	}
+	,getImage: function(id) {
+		var this1 = lime_app_Preloader.images;
+		var _this = this.path;
+		var key = __map_reserved[id] != null ? _this.getReserved(id) : _this.h[id];
+		var _this1 = this1;
+		return lime_graphics_Image.fromImageElement(__map_reserved[key] != null ? _this1.getReserved(key) : _this1.h[key]);
+	}
+	,getPath: function(id) {
+		var _this = this.path;
+		if(__map_reserved[id] != null) {
+			return _this.getReserved(id);
+		} else {
+			return _this.h[id];
+		}
+	}
+	,getText: function(id) {
+		var this1 = lime_app_Preloader.loaders;
+		var _this = this.path;
+		var key = __map_reserved[id] != null ? _this.getReserved(id) : _this.h[id];
+		var _this1 = this1;
+		var loader = __map_reserved[key] != null ? _this1.getReserved(key) : _this1.h[key];
+		if(loader == null) {
+			return null;
+		}
+		var bytes = loader.bytes;
+		if(bytes != null) {
+			return bytes.getString(0,bytes.length);
+		} else {
+			return null;
+		}
+	}
+	,isLocal: function(id,type) {
+		var requestedType = type != null ? js_Boot.__cast(type , String) : null;
+		return true;
+	}
+	,list: function(type) {
+		var requestedType = type != null ? js_Boot.__cast(type , String) : null;
+		var items = [];
+		var id = this.type.keys();
+		while(id.hasNext()) {
+			var id1 = id.next();
+			if(requestedType == null || this.exists(id1,type)) {
+				items.push(id1);
+			}
+		}
+		return items;
+	}
+	,loadAudioBuffer: function(id) {
+		var _gthis = this;
+		var promise = new lime_app_Promise();
+		promise.completeWith(new lime_app_Future(function() {
+			return _gthis.getAudioBuffer(id);
+		}));
+		return promise.future;
+	}
+	,loadBytes: function(id) {
+		var promise = new lime_app_Promise();
+		var _this = this.path;
+		if(__map_reserved[id] != null ? _this.existsReserved(id) : _this.h.hasOwnProperty(id)) {
+			var request = new lime_net_HTTPRequest();
+			var _this1 = this.path;
+			promise.completeWith(request.load((__map_reserved[id] != null ? _this1.getReserved(id) : _this1.h[id]) + "?" + lime_Assets.cache.version));
+		} else {
+			promise.complete(this.getBytes(id));
+		}
+		return promise.future;
+	}
+	,loadImage: function(id) {
+		var promise = new lime_app_Promise();
+		var _this = this.path;
+		if(__map_reserved[id] != null ? _this.existsReserved(id) : _this.h.hasOwnProperty(id)) {
+			var image = new Image();
+			image.onload = function(_) {
+				var tmp = lime_graphics_Image.fromImageElement(image);
+				promise.complete(tmp);
+			};
+			image.onerror = $bind(promise,promise.error);
+			var _this1 = this.path;
+			var tmp1 = __map_reserved[id] != null ? _this1.getReserved(id) : _this1.h[id];
+			image.src = tmp1 + "?" + lime_Assets.cache.version;
+		} else {
+			var tmp2 = this.getImage(id);
+			promise.complete(tmp2);
+		}
+		return promise.future;
+	}
+	,loadText: function(id) {
+		var promise = new lime_app_Promise();
+		var _this = this.path;
+		if(__map_reserved[id] != null ? _this.existsReserved(id) : _this.h.hasOwnProperty(id)) {
+			var request = new lime_net_HTTPRequest();
+			var _this1 = this.path;
+			var future = request.load((__map_reserved[id] != null ? _this1.getReserved(id) : _this1.h[id]) + "?" + lime_Assets.cache.version);
+			future.onProgress(function(progress) {
+				promise.progress(progress);
+			});
+			future.onError(function(msg) {
+				promise.error(msg);
+			});
+			future.onComplete(function(bytes) {
+				var tmp = bytes.getString(0,bytes.length);
+				promise.complete(tmp);
+			});
+		} else {
+			var tmp1 = this.getText(id);
+			promise.complete(tmp1);
+		}
+		return promise.future;
+	}
+	,__class__: DefaultAssetLibrary
+});
+var lime_text_Font = function(name) {
+	if(name != null) {
+		this.name = name;
+	}
+	if(this.__fontPath != null) {
+		this.__fromFile(this.__fontPath);
+	}
+};
+$hxClasses["lime.text.Font"] = lime_text_Font;
+lime_text_Font.__name__ = ["lime","text","Font"];
+lime_text_Font.fromBytes = function(bytes) {
+	var font = new lime_text_Font();
+	font.__fromBytes(bytes);
+	return font;
+};
+lime_text_Font.fromFile = function(path) {
+	var font = new lime_text_Font();
+	font.__fromFile(path);
+	return font;
+};
+lime_text_Font.prototype = {
+	decompose: function() {
+		return null;
+	}
+	,getGlyph: function(character) {
+		return -1;
+	}
+	,getGlyphs: function(characters) {
+		if(characters == null) {
+			characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^`'\"/\\&*()[]{}<>|:;_-+=?,. ";
+		}
+		return null;
+	}
+	,getGlyphMetrics: function(glyph) {
+		return null;
+	}
+	,renderGlyph: function(glyph,fontSize) {
+		return null;
+	}
+	,renderGlyphs: function(glyphs,fontSize) {
+		return null;
+	}
+	,__fromBytes: function(bytes) {
+		this.__fontPath = null;
+	}
+	,__fromFile: function(path) {
+		this.__fontPath = path;
+	}
+	,__setSize: function(size) {
+	}
+	,get_ascender: function() {
+		return 0;
+	}
+	,get_descender: function() {
+		return 0;
+	}
+	,get_height: function() {
+		return 0;
+	}
+	,get_numGlyphs: function() {
+		return 0;
+	}
+	,get_underlinePosition: function() {
+		return 0;
+	}
+	,get_underlineThickness: function() {
+		return 0;
+	}
+	,get_unitsPerEM: function() {
+		return 0;
+	}
+	,__class__: lime_text_Font
+	,__properties__: {get_unitsPerEM:"get_unitsPerEM",get_underlineThickness:"get_underlineThickness",get_underlinePosition:"get_underlinePosition",get_numGlyphs:"get_numGlyphs",get_height:"get_height",get_descender:"get_descender",get_ascender:"get_ascender"}
+};
+var _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf = function() {
+	lime_text_Font.call(this);
+	this.name = "Nokia Cellphone FC Small";
+};
+$hxClasses["__ASSET__flixel_fonts_nokiafc22_ttf"] = _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf;
+_$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf.__name__ = ["__ASSET__flixel_fonts_nokiafc22_ttf"];
+_$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf.__super__ = lime_text_Font;
+_$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf.prototype = $extend(lime_text_Font.prototype,{
+	__class__: _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf
+});
+var _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf = function() {
+	lime_text_Font.call(this);
+	this.name = "Monsterrat";
+};
+$hxClasses["__ASSET__flixel_fonts_monsterrat_ttf"] = _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf;
+_$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf.__name__ = ["__ASSET__flixel_fonts_monsterrat_ttf"];
+_$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf.__super__ = lime_text_Font;
+_$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf.prototype = $extend(lime_text_Font.prototype,{
+	__class__: _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf
+});
+var openfl_text_Font = function(name) {
+	lime_text_Font.call(this,name);
+};
+$hxClasses["openfl.text.Font"] = openfl_text_Font;
+openfl_text_Font.__name__ = ["openfl","text","Font"];
+openfl_text_Font.enumerateFonts = function(enumerateDeviceFonts) {
+	if(enumerateDeviceFonts == null) {
+		enumerateDeviceFonts = false;
+	}
+	return openfl_text_Font.__registeredFonts;
+};
+openfl_text_Font.fromBytes = function(bytes) {
+	var font = new openfl_text_Font();
+	font.__fromBytes(openfl_utils__$ByteArray_ByteArray_$Impl_$.toBytes(bytes));
+	return font;
+};
+openfl_text_Font.fromFile = function(path) {
+	var font = new openfl_text_Font();
+	font.__fromFile(path);
+	return font;
+};
+openfl_text_Font.registerFont = function(font) {
+	var instance = js_Boot.__cast(Type.createInstance(font,[]) , openfl_text_Font);
+	if(instance != null) {
+		openfl_text_Font.__registeredFonts.push(instance);
+	}
+};
+openfl_text_Font.__fromLimeFont = function(value) {
+	var font = new openfl_text_Font();
+	font.name = value.name;
+	font.src = value.src;
+	return font;
+};
+openfl_text_Font.__super__ = lime_text_Font;
+openfl_text_Font.prototype = $extend(lime_text_Font.prototype,{
+	get_fontName: function() {
+		return this.name;
+	}
+	,set_fontName: function(value) {
+		return this.name = value;
+	}
+	,__class__: openfl_text_Font
+	,__properties__: $extend(lime_text_Font.prototype.__properties__,{set_fontName:"set_fontName",get_fontName:"get_fontName"})
+});
+var _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf = function() {
+	var font = new _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf();
+	this.src = font.src;
+	this.name = font.name;
+	openfl_text_Font.call(this);
+};
+$hxClasses["__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf"] = _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf;
+_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf.__name__ = ["__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf"];
+_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf.__super__ = openfl_text_Font;
+_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf.prototype = $extend(openfl_text_Font.prototype,{
+	__class__: _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf
+});
+var _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf = function() {
+	var font = new _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf();
+	this.src = font.src;
+	this.name = font.name;
+	openfl_text_Font.call(this);
+};
+$hxClasses["__ASSET__OPENFL__flixel_fonts_monsterrat_ttf"] = _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf;
+_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf.__name__ = ["__ASSET__OPENFL__flixel_fonts_monsterrat_ttf"];
+_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf.__super__ = openfl_text_Font;
+_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf.prototype = $extend(openfl_text_Font.prototype,{
+	__class__: _$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf
+});
+var EReg = function(r,opt) {
+	this.r = new RegExp(r,opt.split("u").join(""));
+};
+$hxClasses["EReg"] = EReg;
+EReg.__name__ = ["EReg"];
+EReg.prototype = {
+	match: function(s) {
+		if(this.r.global) {
+			this.r.lastIndex = 0;
+		}
+		this.r.m = this.r.exec(s);
+		this.r.s = s;
+		return this.r.m != null;
+	}
+	,matched: function(n) {
+		if(this.r.m != null && n >= 0 && n < this.r.m.length) {
+			return this.r.m[n];
+		} else {
+			throw new js__$Boot_HaxeError("EReg::matched");
+		}
+	}
+	,split: function(s) {
+		var d = "#__delim__#";
+		return s.replace(this.r,d).split(d);
+	}
+	,__class__: EReg
+};
+var flixel_group_FlxTypedGroup = function(MaxSize) {
+	if(MaxSize == null) {
+		MaxSize = 0;
+	}
+	this._marker = 0;
+	this.length = 0;
+	flixel_FlxBasic.call(this);
+	this.members = [];
+	this.set_maxSize(Math.abs(MaxSize) | 0);
+	this.flixelType = 2;
+};
+$hxClasses["flixel.group.FlxTypedGroup"] = flixel_group_FlxTypedGroup;
+flixel_group_FlxTypedGroup.__name__ = ["flixel","group","FlxTypedGroup"];
+flixel_group_FlxTypedGroup.overlaps = function(Callback,Group,X,Y,InScreenSpace,Camera) {
+	var result = false;
+	if(Group != null) {
+		var i = 0;
+		var l = Group.length;
+		var basic;
+		while(i < l) {
+			basic = Group.members[i++];
+			if(basic != null && Callback(basic,X,Y,InScreenSpace,Camera)) {
+				result = true;
+				break;
+			}
+		}
+	}
+	return result;
+};
+flixel_group_FlxTypedGroup.resolveGroup = function(ObjectOrGroup) {
+	var group = null;
+	if(ObjectOrGroup != null) {
+		if(ObjectOrGroup.flixelType == 2) {
+			group = ObjectOrGroup;
+		} else if(ObjectOrGroup.flixelType == 4) {
+			var spriteGroup = ObjectOrGroup;
+			group = spriteGroup.group;
+		}
+	}
+	return group;
+};
+flixel_group_FlxTypedGroup.__super__ = flixel_FlxBasic;
+flixel_group_FlxTypedGroup.prototype = $extend(flixel_FlxBasic.prototype,{
+	destroy: function() {
+		flixel_FlxBasic.prototype.destroy.call(this);
+		if(this.members != null) {
+			var i = 0;
+			var basic = null;
+			while(i < this.length) {
+				basic = this.members[i++];
+				if(basic != null) {
+					basic.destroy();
+				}
+			}
+			this.members = null;
+		}
+	}
+	,update: function(elapsed) {
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null && basic.exists && basic.active) {
+				basic.update(elapsed);
+			}
+		}
+	}
+	,draw: function() {
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null && basic.exists && basic.visible) {
+				basic.draw();
+			}
+		}
+	}
+	,add: function(Object) {
+		if(Object == null) {
+			var _this = flixel_FlxG.log;
+			return null;
+		}
+		if(this.members.indexOf(Object) >= 0) {
+			return Object;
+		}
+		var index = this.getFirstNull();
+		if(index != -1) {
+			this.members[index] = Object;
+			if(index >= this.length) {
+				this.length = index + 1;
+			}
+			return Object;
+		}
+		if(this.maxSize > 0 && this.length >= this.maxSize) {
+			return Object;
+		}
+		this.members.push(Object);
+		this.length++;
+		return Object;
+	}
+	,insert: function(position,object) {
+		if(object == null) {
+			var _this = flixel_FlxG.log;
+			return null;
+		}
+		if(this.members.indexOf(object) >= 0) {
+			return object;
+		}
+		if(position < this.length && this.members[position] == null) {
+			this.members[position] = object;
+			return object;
+		}
+		if(this.maxSize > 0 && this.length >= this.maxSize) {
+			return object;
+		}
+		this.members.splice(position,0,object);
+		this.length++;
+		return object;
+	}
+	,recycle: function(ObjectClass,ObjectFactory,Force,Revive) {
+		if(Revive == null) {
+			Revive = true;
+		}
+		if(Force == null) {
+			Force = false;
+		}
+		var basic = null;
+		if(this.maxSize > 0) {
+			if(this.length < this.maxSize) {
+				var object = null;
+				if(ObjectFactory != null) {
+					object = ObjectFactory();
+					this.add(object);
+				} else if(ObjectClass != null) {
+					object = Type.createInstance(ObjectClass,[]);
+					this.add(object);
+				}
+				return object;
+			} else {
+				basic = this.members[this._marker++];
+				if(this._marker >= this.maxSize) {
+					this._marker = 0;
+				}
+				if(Revive) {
+					basic.revive();
+				}
+				return basic;
+			}
+		} else {
+			basic = this.getFirstAvailable(ObjectClass,Force);
+			if(basic != null) {
+				if(Revive) {
+					basic.revive();
+				}
+				return basic;
+			}
+			var object1 = null;
+			if(ObjectFactory != null) {
+				object1 = ObjectFactory();
+				this.add(object1);
+			} else if(ObjectClass != null) {
+				object1 = Type.createInstance(ObjectClass,[]);
+				this.add(object1);
+			}
+			return object1;
+		}
+	}
+	,recycleCreateObject: function(ObjectClass,ObjectFactory) {
+		var object = null;
+		if(ObjectFactory != null) {
+			object = ObjectFactory();
+			this.add(object);
+		} else if(ObjectClass != null) {
+			object = Type.createInstance(ObjectClass,[]);
+			this.add(object);
+		}
+		return object;
+	}
+	,remove: function(Object,Splice) {
+		if(Splice == null) {
+			Splice = false;
+		}
+		if(this.members == null) {
+			return null;
+		}
+		var index = this.members.indexOf(Object);
+		if(index < 0) {
+			return null;
+		}
+		if(Splice) {
+			this.members.splice(index,1);
+		} else {
+			this.members[index] = null;
+		}
+		return Object;
+	}
+	,replace: function(OldObject,NewObject) {
+		var index = this.members.indexOf(OldObject);
+		if(index < 0) {
+			return null;
+		}
+		this.members[index] = NewObject;
+		return NewObject;
+	}
+	,sort: function(Function,Order) {
+		if(Order == null) {
+			Order = -1;
+		}
+		var f = Function;
+		var a1 = Order;
+		var tmp = function(a2,a3) {
+			return f(a1,a2,a3);
+		};
+		this.members.sort(tmp);
+	}
+	,getFirstAvailable: function(ObjectClass,Force) {
+		if(Force == null) {
+			Force = false;
+		}
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null && !basic.exists && (ObjectClass == null || js_Boot.__instanceof(basic,ObjectClass))) {
+				if(Force && Type.getClassName(basic == null ? null : js_Boot.getClass(basic)) != Type.getClassName(ObjectClass)) {
+					continue;
+				}
+				return this.members[i - 1];
+			}
+		}
+		return null;
+	}
+	,getFirstNull: function() {
+		var i = 0;
+		while(i < this.length) {
+			if(this.members[i] == null) {
+				return i;
+			}
+			++i;
+		}
+		return -1;
+	}
+	,getFirstExisting: function() {
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null && basic.exists) {
+				return basic;
+			}
+		}
+		return null;
+	}
+	,getFirstAlive: function() {
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null && basic.exists && basic.alive) {
+				return basic;
+			}
+		}
+		return null;
+	}
+	,getFirstDead: function() {
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null && !basic.alive) {
+				return basic;
+			}
+		}
+		return null;
+	}
+	,countLiving: function() {
+		var i = 0;
+		var count = -1;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null) {
+				if(count < 0) {
+					count = 0;
+				}
+				if(basic.exists && basic.alive) {
+					++count;
+				}
+			}
+		}
+		return count;
+	}
+	,countDead: function() {
+		var i = 0;
+		var count = -1;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null) {
+				if(count < 0) {
+					count = 0;
+				}
+				if(!basic.alive) {
+					++count;
+				}
+			}
+		}
+		return count;
+	}
+	,getRandom: function(StartIndex,Length) {
+		if(Length == null) {
+			Length = 0;
+		}
+		if(StartIndex == null) {
+			StartIndex = 0;
+		}
+		if(StartIndex < 0) {
+			StartIndex = 0;
+		}
+		if(Length <= 0) {
+			Length = this.length;
+		}
+		return flixel_FlxG.random.getObject_flixel_group_FlxTypedGroup_T(this.members,null,StartIndex,Length);
+	}
+	,clear: function() {
+		this.length = 0;
+		flixel_util_FlxArrayUtil.clearArray(this.members);
+	}
+	,kill: function() {
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null && basic.exists) {
+				basic.kill();
+			}
+		}
+		flixel_FlxBasic.prototype.kill.call(this);
+	}
+	,revive: function() {
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null && !basic.exists) {
+				basic.revive();
+			}
+		}
+		flixel_FlxBasic.prototype.revive.call(this);
+	}
+	,iterator: function(filter) {
+		return new flixel_group_FlxTypedGroupIterator(this.members,filter);
+	}
+	,forEach: function(Function,Recurse) {
+		if(Recurse == null) {
+			Recurse = false;
+		}
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null) {
+				if(Recurse) {
+					var group = flixel_group_FlxTypedGroup.resolveGroup(basic);
+					if(group != null) {
+						group.forEach(Function,Recurse);
+					}
+				}
+				Function(basic);
+			}
+		}
+	}
+	,forEachAlive: function(Function,Recurse) {
+		if(Recurse == null) {
+			Recurse = false;
+		}
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null && basic.exists && basic.alive) {
+				if(Recurse) {
+					var group = flixel_group_FlxTypedGroup.resolveGroup(basic);
+					if(group != null) {
+						group.forEachAlive(Function,Recurse);
+					}
+				}
+				Function(basic);
+			}
+		}
+	}
+	,forEachDead: function(Function,Recurse) {
+		if(Recurse == null) {
+			Recurse = false;
+		}
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null && !basic.alive) {
+				if(Recurse) {
+					var group = flixel_group_FlxTypedGroup.resolveGroup(basic);
+					if(group != null) {
+						group.forEachDead(Function,Recurse);
+					}
+				}
+				Function(basic);
+			}
+		}
+	}
+	,forEachExists: function(Function,Recurse) {
+		if(Recurse == null) {
+			Recurse = false;
+		}
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null && basic.exists) {
+				if(Recurse) {
+					var group = flixel_group_FlxTypedGroup.resolveGroup(basic);
+					if(group != null) {
+						group.forEachExists(Function,Recurse);
+					}
+				}
+				Function(basic);
+			}
+		}
+	}
+	,forEachOfType: function(ObjectClass,Function,Recurse) {
+		if(Recurse == null) {
+			Recurse = false;
+		}
+		var i = 0;
+		var basic = null;
+		while(i < this.length) {
+			basic = this.members[i++];
+			if(basic != null) {
+				if(Recurse) {
+					var group = flixel_group_FlxTypedGroup.resolveGroup(basic);
+					if(group != null) {
+						group.forEachOfType(ObjectClass,Function,Recurse);
+					}
+				}
+				if(js_Boot.__instanceof(basic,ObjectClass)) {
+					Function(basic);
+				}
+			}
+		}
+	}
+	,set_maxSize: function(Size) {
+		this.maxSize = Math.abs(Size) | 0;
+		if(this._marker >= this.maxSize) {
+			this._marker = 0;
+		}
+		if(this.maxSize == 0 || this.members == null || this.maxSize >= this.length) {
+			return this.maxSize;
+		}
+		var i = this.maxSize;
+		var l = this.length;
+		var basic = null;
+		while(i < l) {
+			basic = this.members[i++];
+			if(basic != null) {
+				basic.destroy();
+			}
+		}
+		flixel_util_FlxArrayUtil.setLength_flixel_group_FlxTypedGroup_T(this.members,this.maxSize);
+		this.length = this.members.length;
+		return this.maxSize;
+	}
+	,__class__: flixel_group_FlxTypedGroup
+	,__properties__: $extend(flixel_FlxBasic.prototype.__properties__,{set_maxSize:"set_maxSize"})
+});
+var flixel_FlxState = function(MaxSize) {
+	this._requestSubStateReset = false;
+	this.destroySubStates = true;
+	this.persistentDraw = true;
+	this.persistentUpdate = false;
+	flixel_group_FlxTypedGroup.call(this,MaxSize);
+};
+$hxClasses["flixel.FlxState"] = flixel_FlxState;
+flixel_FlxState.__name__ = ["flixel","FlxState"];
+flixel_FlxState.__super__ = flixel_group_FlxTypedGroup;
+flixel_FlxState.prototype = $extend(flixel_group_FlxTypedGroup.prototype,{
+	create: function() {
+	}
+	,draw: function() {
+		if(this.persistentDraw || this.subState == null) {
+			flixel_group_FlxTypedGroup.prototype.draw.call(this);
+		}
+		if(this.subState != null) {
+			this.subState.draw();
+		}
+	}
+	,openSubState: function(SubState) {
+		this._requestSubStateReset = true;
+		this._requestedSubState = SubState;
+	}
+	,closeSubState: function() {
+		this._requestSubStateReset = true;
+	}
+	,resetSubState: function() {
+		if(this.subState != null) {
+			if(this.subState.closeCallback != null) {
+				this.subState.closeCallback();
+			}
+			if(this.destroySubStates) {
+				this.subState.destroy();
+			}
+		}
+		this.subState = this._requestedSubState;
+		this._requestedSubState = null;
+		if(this.subState != null) {
+			if(!this.persistentUpdate) {
+				flixel_FlxG.inputs.onStateSwitch();
+			}
+			this.subState._parentState = this;
+			if(!this.subState._created) {
+				this.subState._created = true;
+				this.subState.create();
+			}
+		}
+	}
+	,destroy: function() {
+		if(this.subState != null) {
+			this.subState.destroy();
+			this.subState = null;
+		}
+		flixel_group_FlxTypedGroup.prototype.destroy.call(this);
+	}
+	,switchTo: function(nextState) {
+		return true;
+	}
+	,onFocusLost: function() {
+	}
+	,onFocus: function() {
+	}
+	,onResize: function(Width,Height) {
+	}
+	,tryUpdate: function(elapsed) {
+		if(this.persistentUpdate || this.subState == null) {
+			this.update(elapsed);
+		}
+		if(this._requestSubStateReset) {
+			this._requestSubStateReset = false;
+			this.resetSubState();
+		} else if(this.subState != null) {
+			this.subState.tryUpdate(elapsed);
+		}
+	}
+	,get_bgColor: function() {
+		return flixel_FlxG.cameras.get_bgColor();
+	}
+	,set_bgColor: function(Value) {
+		return flixel_FlxG.cameras.set_bgColor(Value);
+	}
+	,__class__: flixel_FlxState
+	,__properties__: $extend(flixel_group_FlxTypedGroup.prototype.__properties__,{set_bgColor:"set_bgColor",get_bgColor:"get_bgColor"})
+});
+var EndState = function(MaxSize) {
+	flixel_FlxState.call(this,MaxSize);
+};
+$hxClasses["EndState"] = EndState;
+EndState.__name__ = ["EndState"];
+EndState.__super__ = flixel_FlxState;
+EndState.prototype = $extend(flixel_FlxState.prototype,{
+	create: function() {
+		flixel_FlxState.prototype.create.call(this);
+		var _this = flixel_FlxG.sound.music;
+		_this.cleanup(_this.autoDestroy,true);
+		var spr = new flixel_FlxSprite(0,0);
+		if(PlayState.txtP == "Victoria") {
+			flixel_FlxG.sound.play("assets/VictoriaSonido.ogg");
+			flixel_FlxG.sound.playMusic("assets/victoria.ogg");
+			spr.loadGraphic("assets/placas_juego-09.png");
+		} else if(PlayState.txtP == "Derrota") {
+			flixel_FlxG.sound.play("assets/DerrotaSonido.ogg");
+			flixel_FlxG.sound.playMusic("assets/derrota.ogg");
+			spr.loadGraphic("assets/placas_juego-14.png");
+		}
+		this.add(spr);
+		var btn = new flixel_ui_FlxButton(0,0,"",$bind(this,this.reiniciar));
+		btn.loadGraphic("assets/btnvolverajugar.png",true,80,20);
+		this.add(btn);
+		btn.setGraphicSize(240,60);
+		btn.updateHitbox();
+		btn.setPosition(flixel_FlxG.width / 2 - btn.get_width() / 2,flixel_FlxG.height / 2);
+	}
+	,reiniciar: function() {
+		flixel_FlxG.sound.play("assets/Select.ogg");
+		var nextState = new MenuState();
+		if(flixel_FlxG.game._state.switchTo(nextState)) {
+			flixel_FlxG.game._requestedState = nextState;
+		}
+	}
+	,__class__: EndState
+});
 var Enemigo = function(X,Y,_p) {
 	if(Y == null) {
 		Y = 0;
@@ -5895,6 +6326,190 @@ Enemigo.prototype = $extend(flixel_FlxSprite.prototype,{
 	}
 	,__class__: Enemigo
 });
+var Entrada = function() { };
+$hxClasses["Entrada"] = Entrada;
+Entrada.__name__ = ["Entrada"];
+Entrada.esMovil = function() {
+	var _this = flixel_FlxG.html5;
+	if(window.innerHeight <= 800) {
+		return true;
+	} else {
+		return false;
+	}
+};
+Entrada.getX = function() {
+	if(Entrada.esMovil()) {
+		var touch = flixel_FlxG.touches.getFirst();
+		if(touch != null) {
+			return touch.x;
+		} else {
+			return -1;
+		}
+	} else {
+		return flixel_FlxG.mouse.x;
+	}
+};
+Entrada.getY = function() {
+	if(Entrada.esMovil()) {
+		var touch = flixel_FlxG.touches.getFirst();
+		if(touch != null) {
+			return touch.y;
+		} else {
+			return -1;
+		}
+	} else {
+		return flixel_FlxG.mouse.y;
+	}
+};
+Entrada.getClick = function() {
+	if(Entrada.esMovil()) {
+		var touch = flixel_FlxG.touches.getFirst();
+		if(touch != null) {
+			return touch.input.current == 2;
+		} else {
+			return false;
+		}
+	} else {
+		return flixel_FlxG.mouse._leftButton.current == 2;
+	}
+};
+Entrada.irIzquierda = function(btn) {
+	if(Entrada.esMovil()) {
+		var _this = btn.input;
+		if(_this.current != 1) {
+			return _this.current == 2;
+		} else {
+			return true;
+		}
+	} else {
+		var tmp;
+		var _this1 = flixel_FlxG.keys.pressed;
+		if(_this1.keyManager.checkStatus(37,_this1.status)) {
+			var _this2 = flixel_FlxG.keys.pressed;
+			tmp = !_this2.keyManager.checkStatus(39,_this2.status);
+		} else {
+			tmp = false;
+		}
+		if(tmp) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+};
+Entrada.irDerecha = function(btn) {
+	if(Entrada.esMovil()) {
+		var _this = btn.input;
+		if(_this.current != 1) {
+			return _this.current == 2;
+		} else {
+			return true;
+		}
+	} else {
+		var tmp;
+		var _this1 = flixel_FlxG.keys.pressed;
+		if(!_this1.keyManager.checkStatus(37,_this1.status)) {
+			var _this2 = flixel_FlxG.keys.pressed;
+			tmp = _this2.keyManager.checkStatus(39,_this2.status);
+		} else {
+			tmp = false;
+		}
+		if(tmp) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+};
+Entrada.atacar = function(btn) {
+	if(Entrada.esMovil()) {
+		return btn.input.current == 2;
+	} else {
+		var _this = flixel_FlxG.keys.justPressed;
+		return _this.keyManager.checkStatus(32,_this.status);
+	}
+};
+Entrada.bothReleased = function(btn1,btn2) {
+	if(Entrada.esMovil()) {
+		if(btn1.input.current == -1 || btn2.input.current == -1) {
+			return true;
+		} else {
+			return false;
+		}
+	} else {
+		var tmp;
+		var _this = flixel_FlxG.keys.justReleased;
+		if(!_this.keyManager.checkStatus(37,_this.status)) {
+			var _this1 = flixel_FlxG.keys.justReleased;
+			tmp = _this1.keyManager.checkStatus(39,_this1.status);
+		} else {
+			tmp = true;
+		}
+		if(tmp) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+};
+Entrada.oneJustPressed = function(btn1,btn2) {
+	if(Entrada.esMovil()) {
+		if(btn1.input.current == 2 || btn2.input.current == 2) {
+			return true;
+		} else {
+			return false;
+		}
+	} else {
+		var tmp;
+		var _this = flixel_FlxG.keys.justPressed;
+		if(!_this.keyManager.checkStatus(37,_this.status)) {
+			var _this1 = flixel_FlxG.keys.justPressed;
+			tmp = _this1.keyManager.checkStatus(39,_this1.status);
+		} else {
+			tmp = true;
+		}
+		if(tmp) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+};
+Entrada.BothPressed = function(btn1,btn2) {
+	if(Entrada.esMovil()) {
+		var tmp;
+		var _this = btn1.input;
+		if(_this.current == 1 || _this.current == 2) {
+			var _this1 = btn2.input;
+			if(_this1.current != 1) {
+				tmp = _this1.current == 2;
+			} else {
+				tmp = true;
+			}
+		} else {
+			tmp = false;
+		}
+		if(tmp) {
+			return true;
+		} else {
+			return false;
+		}
+	} else {
+		var tmp1;
+		var _this2 = flixel_FlxG.keys.pressed;
+		if(_this2.keyManager.checkStatus(37,_this2.status)) {
+			var _this3 = flixel_FlxG.keys.pressed;
+			tmp1 = _this3.keyManager.checkStatus(39,_this3.status);
+		} else {
+			tmp1 = false;
+		}
+		if(tmp1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+};
 var HxOverrides = function() { };
 $hxClasses["HxOverrides"] = HxOverrides;
 HxOverrides.__name__ = ["HxOverrides"];
@@ -6071,9 +6686,9 @@ MenuState.prototype = $extend(flixel_FlxState.prototype,{
 	,update: function(elapsed) {
 		flixel_FlxState.prototype.update.call(this,elapsed);
 		if(this.aux) {
-			var x = flixel_FlxG.mouse.x;
-			var y = flixel_FlxG.mouse.y;
-			if(flixel_FlxG.mouse._leftButton.current == 2) {
+			var x = Entrada.getX();
+			var y = Entrada.getY();
+			if(Entrada.getClick()) {
 				if(x > 41 && x < 425 && y > 103 && y < 473) {
 					flixel_FlxG.sound.play("assets/Select.ogg");
 					this.p = "itai";
@@ -6251,6 +6866,15 @@ var Personaje = function(X,Y,SimpleGraphic) {
 	this.invisibleBox = new flixel_FlxSprite(0,0);
 	this.invisibleBox.makeGraphic(40,15,0);
 	flixel_FlxG.game._state.add(this.invisibleBox);
+	if(Entrada.esMovil()) {
+		this.btnizq = new Botones(50,flixel_FlxG.height / 2 - 50,true,true,this);
+		this.btnder = new Botones(flixel_FlxG.width - 50 - this.btnizq.get_width(),flixel_FlxG.height / 2 - 50,true,false,this);
+		this.btnattack = new Botones(50,flixel_FlxG.height / 2 - 50,false,false,this);
+		this.btnattack.setPosition(flixel_FlxG.width / 2 - this.btnattack.get_width() / 2,550);
+		flixel_FlxG.game._state.add(this.btnizq);
+		flixel_FlxG.game._state.add(this.btnder);
+		flixel_FlxG.game._state.add(this.btnattack);
+	}
 };
 $hxClasses["Personaje"] = Personaje;
 Personaje.__name__ = ["Personaje"];
@@ -6258,62 +6882,30 @@ Personaje.__super__ = flixel_FlxSprite;
 Personaje.prototype = $extend(flixel_FlxSprite.prototype,{
 	update: function(elapsed) {
 		flixel_FlxSprite.prototype.update.call(this,elapsed);
-		var tmp;
-		var _this = flixel_FlxG.keys.justReleased;
-		if(!_this.keyManager.checkStatus(37,_this.status)) {
-			var _this1 = flixel_FlxG.keys.justReleased;
-			tmp = _this1.keyManager.checkStatus(39,_this1.status);
-		} else {
-			tmp = true;
-		}
-		if(tmp) {
+		if(Entrada.bothReleased(this.btnizq,this.btnder)) {
 			if(this.animation.get_name() == "caminar") {
 				this.animation.stop();
 				this.animation.play("idle");
 			}
 		}
-		var tmp1;
-		var _this2 = flixel_FlxG.keys.pressed;
-		if(_this2.keyManager.checkStatus(37,_this2.status)) {
-			var _this3 = flixel_FlxG.keys.pressed;
-			tmp1 = _this3.keyManager.checkStatus(39,_this3.status);
-		} else {
-			tmp1 = false;
-		}
-		if(tmp1) {
-			if(this.animation.get_name() == "caminar") {
-				this.animation.stop();
-				this.animation.play("idle");
-			}
-		}
-		var tmp2;
-		var _this4 = flixel_FlxG.keys.justPressed;
-		if(!_this4.keyManager.checkStatus(37,_this4.status)) {
-			var _this5 = flixel_FlxG.keys.justPressed;
-			tmp2 = _this5.keyManager.checkStatus(39,_this5.status);
-		} else {
-			tmp2 = true;
-		}
-		if(tmp2) {
+		if(Entrada.oneJustPressed(this.btnizq,this.btnder)) {
 			this.animation.play("caminar");
 		}
-		var tmp3;
-		var _this6 = flixel_FlxG.keys.pressed;
-		if(_this6.keyManager.checkStatus(37,_this6.status)) {
-			var _this7 = flixel_FlxG.keys.pressed;
-			tmp3 = !_this7.keyManager.checkStatus(39,_this7.status);
-		} else {
-			tmp3 = false;
+		if(Entrada.BothPressed(this.btnizq,this.btnder)) {
+			if(this.animation.get_name() == "caminar") {
+				this.animation.stop();
+				this.animation.play("idle");
+			}
 		}
-		if(tmp3) {
+		if(Entrada.irIzquierda(this.btnizq)) {
 			if(flixel_FlxG.worldBounds.x < this.x - 20) {
 				this.set_flipX(true);
 				var _g = this;
 				_g.set_x(_g.x - 4);
-				var _this8 = flixel_FlxG.camera.scroll;
-				var _g1 = _this8;
+				var _this = flixel_FlxG.camera.scroll;
+				var _g1 = _this;
 				_g1.set_x(_g1.x + -4);
-				var _g2 = _this8;
+				var _g2 = _this;
 				_g2.set_y(_g2.y);
 				if(this.animation.get_name() == "idle") {
 					this.animation.stop();
@@ -6324,23 +6916,15 @@ Personaje.prototype = $extend(flixel_FlxSprite.prototype,{
 				this.animation.play("idle");
 			}
 		}
-		var tmp4;
-		var _this9 = flixel_FlxG.keys.pressed;
-		if(_this9.keyManager.checkStatus(39,_this9.status)) {
-			var _this10 = flixel_FlxG.keys.pressed;
-			tmp4 = !_this10.keyManager.checkStatus(37,_this10.status);
-		} else {
-			tmp4 = false;
-		}
-		if(tmp4) {
+		if(Entrada.irDerecha(this.btnder)) {
 			if(flixel_FlxG.worldBounds.x + flixel_FlxG.worldBounds.width > this.x + this.get_width() + 20) {
 				this.set_flipX(false);
 				var _g3 = this;
 				_g3.set_x(_g3.x + 4);
-				var _this11 = flixel_FlxG.camera.scroll;
-				var _g4 = _this11;
+				var _this1 = flixel_FlxG.camera.scroll;
+				var _g4 = _this1;
 				_g4.set_x(_g4.x + 4);
-				var _g5 = _this11;
+				var _g5 = _this1;
 				_g5.set_y(_g5.y);
 				if(this.animation.get_name() == "idle") {
 					this.animation.stop();
@@ -6351,14 +6935,7 @@ Personaje.prototype = $extend(flixel_FlxSprite.prototype,{
 				this.animation.play("idle");
 			}
 		}
-		var tmp5;
-		var _this12 = flixel_FlxG.keys.justPressed;
-		if(!_this12.keyManager.checkStatus(32,_this12.status)) {
-			tmp5 = !this.auxxxxxxxx;
-		} else {
-			tmp5 = true;
-		}
-		if(tmp5) {
+		if(Entrada.atacar(this.btnattack) || !this.auxxxxxxxx) {
 			this.animation.play("golpe");
 			this.aux = true;
 			this.auxxxxxxxx = true;
@@ -6377,10 +6954,6 @@ Personaje.prototype = $extend(flixel_FlxSprite.prototype,{
 				flixel_FlxG.overlap(this.invisibleBox,this.enemigos,$bind(this,this.matarenemigo));
 				this.aux = false;
 			}
-		}
-		var _this13 = flixel_FlxG.keys.justPressed;
-		if(_this13.keyManager.checkStatus(68,_this13.status)) {
-			this.animation.play("idle");
 		}
 	}
 	,atacado: function() {
@@ -18228,13 +18801,6 @@ flixel_input_FlxBaseKeyList.prototype = {
 	}
 	,__class__: flixel_input_FlxBaseKeyList
 	,__properties__: {get_ANY:"get_ANY"}
-};
-var flixel_input_IFlxInput = function() { };
-$hxClasses["flixel.input.IFlxInput"] = flixel_input_IFlxInput;
-flixel_input_IFlxInput.__name__ = ["flixel","input","IFlxInput"];
-flixel_input_IFlxInput.prototype = {
-	__class__: flixel_input_IFlxInput
-	,__properties__: {get_justPressed:"get_justPressed",get_pressed:"get_pressed",get_released:"get_released",get_justReleased:"get_justReleased"}
 };
 var flixel_input_FlxInput = function(ID) {
 	this.last = 0;
@@ -72744,6 +73310,7 @@ openfl_display_DisplayObject.__cacheAsBitmapMode = false;
 AssetPaths.AtaqueBueno__ogg = "assets/AtaqueBueno.ogg";
 AssetPaths.AtaqueMalo__ogg = "assets/AtaqueMalo.ogg";
 AssetPaths.Boss__png = "assets/Boss.png";
+AssetPaths.btnatacar__png = "assets/btnatacar.png";
 AssetPaths.btnjugar__png = "assets/btnjugar.png";
 AssetPaths.btnpropuestas__png = "assets/btnpropuestas.png";
 AssetPaths.btnvolverajugar__png = "assets/btnvolverajugar.png";
@@ -72752,6 +73319,7 @@ AssetPaths.corazon__png = "assets/corazon.png";
 AssetPaths.derrota__ogg = "assets/derrota.ogg";
 AssetPaths.DerrotaSonido__ogg = "assets/DerrotaSonido.ogg";
 AssetPaths.eli__png = "assets/eli.png";
+AssetPaths.flecha__png = "assets/flecha.png";
 AssetPaths.fondo__png = "assets/fondo.png";
 AssetPaths.inicio__ogg = "assets/inicio.ogg";
 AssetPaths.itai__png = "assets/itai.png";
@@ -72770,7 +73338,6 @@ AssetPaths.seleccionador__png = "assets/seleccionador.png";
 AssetPaths.Select__ogg = "assets/Select.ogg";
 AssetPaths.victoria__ogg = "assets/victoria.ogg";
 AssetPaths.VictoriaSonido__ogg = "assets/VictoriaSonido.ogg";
-openfl_text_Font.__registeredFonts = [];
 flixel_math_FlxRect._pool = new flixel_util_FlxPool_$flixel_$math_$FlxRect(flixel_math_FlxRect);
 flixel_FlxObject.defaultPixelPerfectPosition = false;
 flixel_FlxObject.SEPARATE_BIAS = 4;
@@ -72807,6 +73374,7 @@ flixel_FlxObject._secondSeparateFlxRect = (function($this) {
 	$r = rect;
 	return $r;
 }(this));
+openfl_text_Font.__registeredFonts = [];
 PlayState.conte = 0;
 PlayState.txtP = "";
 flixel_text_FlxText.VERTICAL_GUTTER = 4;
