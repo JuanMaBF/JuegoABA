@@ -6331,7 +6331,7 @@ $hxClasses["Entrada"] = Entrada;
 Entrada.__name__ = ["Entrada"];
 Entrada.esMovil = function() {
 	var _this = flixel_FlxG.html5;
-	if(window.innerHeight <= 800) {
+	if(window.innerHeight <= 750) {
 		haxe_Log.trace("movil",{ fileName : "Entrada.hx", lineNumber : 17, className : "Entrada", methodName : "esMovil"});
 		return true;
 	} else {
