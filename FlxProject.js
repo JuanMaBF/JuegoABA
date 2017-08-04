@@ -126,7 +126,7 @@ ApplicationMain.init = function() {
 	}
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "447", company : "HaxeFlixel", file : "FlxProject", fps : 60, name : "FlxProject", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "FlxProject", vsync : true, width : 960, x : null, y : null}]};
+	ApplicationMain.config = { build : "457", company : "HaxeFlixel", file : "FlxProject", fps : 60, name : "FlxProject", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 720, parameters : "{}", resizable : false, stencilBuffer : true, title : "FlxProject", vsync : true, width : 960, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	var hasMain = false;
@@ -6332,45 +6332,11 @@ Entrada.__name__ = ["Entrada"];
 Entrada.esMovil = function() {
 	var _this = flixel_FlxG.html5;
 	if(window.innerHeight <= 800) {
+		haxe_Log.trace("movil",{ fileName : "Entrada.hx", lineNumber : 17, className : "Entrada", methodName : "esMovil"});
 		return true;
 	} else {
+		haxe_Log.trace("pc",{ fileName : "Entrada.hx", lineNumber : 20, className : "Entrada", methodName : "esMovil"});
 		return false;
-	}
-};
-Entrada.getX = function() {
-	if(Entrada.esMovil()) {
-		var touch = flixel_FlxG.touches.getFirst();
-		if(touch != null) {
-			return touch.x;
-		} else {
-			return -1;
-		}
-	} else {
-		return flixel_FlxG.mouse.x;
-	}
-};
-Entrada.getY = function() {
-	if(Entrada.esMovil()) {
-		var touch = flixel_FlxG.touches.getFirst();
-		if(touch != null) {
-			return touch.y;
-		} else {
-			return -1;
-		}
-	} else {
-		return flixel_FlxG.mouse.y;
-	}
-};
-Entrada.getClick = function() {
-	if(Entrada.esMovil()) {
-		var touch = flixel_FlxG.touches.getFirst();
-		if(touch != null) {
-			return touch.input.current == 2;
-		} else {
-			return false;
-		}
-	} else {
-		return flixel_FlxG.mouse._leftButton.current == 2;
 	}
 };
 Entrada.irIzquierda = function(btn) {
@@ -6686,9 +6652,11 @@ MenuState.prototype = $extend(flixel_FlxState.prototype,{
 	,update: function(elapsed) {
 		flixel_FlxState.prototype.update.call(this,elapsed);
 		if(this.aux) {
-			var x = Entrada.getX();
-			var y = Entrada.getY();
-			if(Entrada.getClick()) {
+			var x;
+			var y;
+			x = flixel_FlxG.mouse.x;
+			y = flixel_FlxG.mouse.y;
+			if(flixel_FlxG.mouse._leftButton.current == 2) {
 				if(x > 41 && x < 425 && y > 103 && y < 473) {
 					flixel_FlxG.sound.play("assets/Select.ogg");
 					this.p = "itai";
